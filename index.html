@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Staff Playbook — City & Guilds Vehicle Maintenance Qualifications</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0d1b2a;
+    --navy-mid: #1a2d42;
+    --navy-light: #243b55;
+    --red: #c0392b;
+    --red-bright: #e74c3c;
+    --gold: #f39c12;
+    --gold-light: #f9ca5a;
+    --white: #f5f5f0;
+    --grey: #8a9bb0;
+    --success: #27ae60;
+    --warn: #e67e22;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Barlow', sans-serif;
+    background: var(--navy);
+    color: var(--white);
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  /* HEADER */
+  header {
+    background: var(--navy-mid);
+    border-bottom: 4px solid var(--gold);
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+  }
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .header-brand { display: flex; align-items: center; gap: 16px; }
+  .brand-badge {
+    background: var(--red);
+    color: #fff;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 2px;
+  }
+  .brand-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    color: var(--white);
+    letter-spacing: 0.5px;
+  }
+  .brand-sub {
+    font-size: 12px;
+    color: var(--grey);
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  nav { display: flex; gap: 4px; flex-wrap: wrap; }
+  nav a {
+    color: var(--grey);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 3px;
+    letter-spacing: 0.5px;
+    transition: all 0.2s;
+  }
+  nav a:hover { background: var(--navy-light); color: var(--gold); }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, var(--navy-mid) 0%, var(--navy-light) 50%, #1e3350 100%);
+    border-bottom: 2px solid var(--navy-light);
+    padding: 56px 32px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: 0; right: 0; bottom: 0;
+    width: 40%;
+    background: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 8px,
+      rgba(243,156,18,0.04) 8px,
+      rgba(243,156,18,0.04) 9px
+    );
+    pointer-events: none;
+  }
+  .hero-inner { max-width: 1200px; margin: 0 auto; position: relative; }
+  .hero-eyebrow {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+  .hero h1 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    font-size: clamp(36px, 5vw, 58px);
+    line-height: 1;
+    letter-spacing: -0.5px;
+    margin-bottom: 16px;
+  }
+  .hero h1 span { color: var(--gold); }
+  .hero-desc {
+    color: #a8bcce;
+    font-size: 16px;
+    font-weight: 300;
+    max-width: 620px;
+    margin-bottom: 32px;
+    line-height: 1.7;
+  }
+  .hero-stats {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  .hero-stat {
+    display: flex;
+    flex-direction: column;
+    border-left: 3px solid var(--gold);
+    padding-left: 14px;
+  }
+  .hero-stat-n {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    font-size: 32px;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .hero-stat-l {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--grey);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* MAIN LAYOUT */
+  .main { max-width: 1200px; margin: 0 auto; padding: 0 32px 64px; }
+
+  /* SECTION */
+  section { margin-top: 56px; }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 28px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--navy-light);
+  }
+  .section-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    font-size: 48px;
+    color: var(--navy-light);
+    line-height: 1;
+    min-width: 56px;
+  }
+  .section-title-group {}
+  .section-tag {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 4px;
+  }
+  .section-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    color: var(--white);
+    line-height: 1;
+  }
+
+  /* ALERT BOX */
+  .alert {
+    border-radius: 4px;
+    padding: 16px 20px;
+    margin-bottom: 24px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    border-left: 4px solid;
+  }
+  .alert-icon { font-size: 20px; line-height: 1; flex-shrink: 0; margin-top: 2px; }
+  .alert-body {}
+  .alert-title { font-weight: 600; font-size: 14px; margin-bottom: 4px; }
+  .alert-text { font-size: 14px; line-height: 1.5; color: #c5d3de; }
+  .alert.danger { background: rgba(192,57,43,0.15); border-color: var(--red); }
+  .alert.danger .alert-title { color: #e74c3c; }
+  .alert.warning { background: rgba(230,126,34,0.12); border-color: var(--warn); }
+  .alert.warning .alert-title { color: var(--warn); }
+  .alert.success { background: rgba(39,174,96,0.1); border-color: var(--success); }
+  .alert.success .alert-title { color: var(--success); }
+  .alert.info { background: rgba(52,152,219,0.1); border-color: #3498db; }
+  .alert.info .alert-title { color: #5dade2; }
+
+  /* CARDS GRID */
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+  .card {
+    background: var(--navy-mid);
+    border: 1px solid var(--navy-light);
+    border-radius: 6px;
+    padding: 20px;
+    transition: border-color 0.2s;
+  }
+  .card:hover { border-color: var(--gold); }
+  .card-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+  .card-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 8px;
+    color: var(--white);
+  }
+  .card-text { font-size: 13px; color: #8a9bb0; line-height: 1.6; }
+  .card-accent { border-top: 3px solid; }
+  .card-accent.red { border-color: var(--red); }
+  .card-accent.gold { border-color: var(--gold); }
+  .card-accent.blue { border-color: #3498db; }
+  .card-accent.green { border-color: var(--success); }
+
+  /* SCHEME OF WORK TABLE */
+  .sow-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .sow-table th {
+    background: var(--navy-light);
+    color: var(--gold);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 10px 14px;
+    text-align: left;
+    border-bottom: 2px solid var(--gold);
+  }
+  .sow-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--navy-light);
+    vertical-align: top;
+    color: #c5d3de;
+    line-height: 1.5;
+  }
+  .sow-table tr:hover td { background: rgba(255,255,255,0.02); }
+  .sow-table td:first-child {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--gold);
+    white-space: nowrap;
+  }
+  .unit-code {
+    display: inline-block;
+    background: var(--navy-light);
+    border: 1px solid var(--navy-light);
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 600;
+    font-family: 'Barlow Condensed', sans-serif;
+    letter-spacing: 1px;
+    padding: 2px 7px;
+    color: var(--grey);
+    white-space: nowrap;
+  }
+  .tag {
+    display: inline-block;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    margin: 2px 2px 2px 0;
+  }
+  .tag-practical { background: rgba(39,174,96,0.2); color: #6ee0a0; }
+  .tag-theory { background: rgba(52,152,219,0.2); color: #7ec8f0; }
+  .tag-portfolio { background: rgba(243,156,18,0.2); color: var(--gold-light); }
+  .tag-health { background: rgba(192,57,43,0.2); color: #e08080; }
+
+  /* CHECKLIST */
+  .checklist { list-style: none; }
+  .checklist li {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    font-size: 14px;
+    color: #c5d3de;
+  }
+  .checklist li:last-child { border-bottom: none; }
+  .check-box {
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--navy-light);
+    border-radius: 3px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .checklist .step-n {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    font-size: 18px;
+    color: var(--gold);
+    min-width: 24px;
+    flex-shrink: 0;
+    line-height: 1;
+    margin-top: 1px;
+  }
+  .checklist .step-body {}
+  .checklist .step-title { font-weight: 600; color: var(--white); margin-bottom: 3px; font-size: 14px; }
+  .checklist .step-detail { font-size: 13px; color: var(--grey); line-height: 1.5; }
+
+  /* RESOURCES GRID */
+  .resources { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; }
+  .resource-card {
+    background: var(--navy-mid);
+    border: 1px solid var(--navy-light);
+    border-radius: 6px;
+    overflow: hidden;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .resource-card:hover { border-color: var(--gold); transform: translateY(-2px); }
+  .resource-header {
+    padding: 12px 16px;
+    background: var(--navy-light);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .resource-icon { font-size: 20px; }
+  .resource-type {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--grey);
+  }
+  .resource-body { padding: 14px 16px; }
+  .resource-title {
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--white);
+    margin-bottom: 6px;
+    line-height: 1.3;
+  }
+  .resource-desc { font-size: 13px; color: var(--grey); line-height: 1.5; margin-bottom: 10px; }
+  .resource-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gold);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .resource-link:hover { color: var(--gold-light); }
+
+  /* TIMELINE */
+  .timeline { position: relative; padding-left: 32px; }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 8px; top: 0; bottom: 0;
+    width: 2px;
+    background: var(--navy-light);
+  }
+  .tl-item {
+    position: relative;
+    margin-bottom: 28px;
+  }
+  .tl-item::before {
+    content: '';
+    position: absolute;
+    left: -28px;
+    top: 6px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--gold);
+    border: 2px solid var(--navy);
+  }
+  .tl-week {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+  .tl-title {
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--white);
+    margin-bottom: 6px;
+  }
+  .tl-detail { font-size: 13px; color: var(--grey); line-height: 1.6; }
+
+  /* 2-col layout */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  @media (max-width: 768px) { .two-col { grid-template-columns: 1fr; } }
+
+  /* Panel */
+  .panel {
+    background: var(--navy-mid);
+    border: 1px solid var(--navy-light);
+    border-radius: 6px;
+    padding: 24px;
+  }
+  .panel-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--white);
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--navy-light);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* Pill badge */
+  .pill {
+    display: inline-block;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 3px 10px;
+    text-transform: uppercase;
+  }
+  .pill-red { background: var(--red); color: #fff; }
+  .pill-gold { background: var(--gold); color: var(--navy); }
+  .pill-green { background: var(--success); color: #fff; }
+  .pill-blue { background: #2980b9; color: #fff; }
+
+  /* Deadline strip */
+  .deadline-strip {
+    background: linear-gradient(90deg, rgba(192,57,43,0.3) 0%, transparent 100%);
+    border-left: 4px solid var(--red);
+    padding: 12px 16px;
+    border-radius: 0 4px 4px 0;
+    margin-bottom: 12px;
+  }
+  .deadline-label { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--red-bright); margin-bottom: 4px; }
+  .deadline-text { font-size: 14px; color: var(--white); font-weight: 500; }
+
+  /* Footer */
+  footer {
+    background: var(--navy-mid);
+    border-top: 2px solid var(--navy-light);
+    padding: 32px;
+    text-align: center;
+    color: var(--grey);
+    font-size: 13px;
+    margin-top: 64px;
+  }
+  footer span { color: var(--gold); }
+
+  /* Print */
+  @media print {
+    body { background: white; color: black; }
+    header, nav { display: none; }
+    .hero { background: white; color: black; }
+    .card, .panel { border: 1px solid #ddd; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="header-brand">
+      <div class="brand-badge">ESC Motor Vehicle</div>
+      <div>
+        <div class="brand-title">Staff Qualification Playbook</div>
+        <div class="brand-sub">City & Guilds 7290 / 3902 — 2025–26</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#overview">Overview</a>
+      <a href="#sow">Scheme of Work</a>
+      <a href="#process">Process</a>
+      <a href="#resources">Resources</a>
+      <a href="#assessment">Assessment</a>
+      <a href="#deadlines">Deadlines</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">East Surrey College — Motor Vehicle & Motorsport</div>
+    <h1>Qualification<br><span>Delivery Playbook</span></h1>
+    <p class="hero-desc">This playbook exists to give staff a clear, non-negotiable sequence for delivering and completing City & Guilds vehicle maintenance qualifications on time. Follow it to the letter.</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="hero-stat-n">2</div><div class="hero-stat-l">Qualifications</div></div>
+      <div class="hero-stat"><div class="hero-stat-n">17</div><div class="hero-stat-l">Units to Complete</div></div>
+      <div class="hero-stat"><div class="hero-stat-n">2</div><div class="hero-stat-l">Evidence Types Each</div></div>
+      <div class="hero-stat"><div class="hero-stat-n">1</div><div class="hero-stat-l">Playbook to Follow</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- SECTION 1: OVERVIEW -->
+  <section id="overview">
+    <div class="section-header">
+      <div class="section-num">01</div>
+      <div class="section-title-group">
+        <div class="section-tag">Qualification Overview</div>
+        <div class="section-title">What We're Delivering & Why It Matters</div>
+      </div>
+    </div>
+
+    <div class="alert danger">
+      <div class="alert-icon">⚠️</div>
+      <div class="alert-body">
+        <div class="alert-title">Manager's Note — Read First</div>
+        <div class="alert-text">Delivery of these qualifications has taken significantly longer than it should. This playbook sets the standard for 2025–26. Every member of staff teaching on these programmes is expected to follow every step. There is no room for variation on the core process. If you have a question, escalate to the Coordinator — do not delay evidence collection.</div>
+      </div>
+    </div>
+
+    <div class="cards">
+      <div class="card card-accent red">
+        <div class="card-label">Entry Level 3</div>
+        <div class="card-title">City & Guilds Diploma in Vehicle System and Maintenance</div>
+        <div class="card-text">Qualification ref: <strong>3902</strong>. Covers 10 mandatory units (3902-001 through 3902-011). Each unit requires a practical observation AND a short-answer written assessment. Suitable for learners with little or no prior vehicle knowledge.</div>
+      </div>
+      <div class="card card-accent gold">
+        <div class="card-label">Level 1</div>
+        <div class="card-title">City & Guilds Certificate in Vehicle Maintenance</div>
+        <div class="card-text">Qualification ref: <strong>7290-10</strong>. Mandatory units include health & safety (7290-001, 7290-031), knowledge units (7290-051, 7290-081), and vocational skills (e.g. 7290-702 Engine Cooling). Each unit has practical skills and knowledge evidence components.</div>
+      </div>
+      <div class="card card-accent blue">
+        <div class="card-label">Assessment Model</div>
+        <div class="card-title">How Evidence Is Collected</div>
+        <div class="card-text">Every unit has two evidence components: (1) an <strong>Assessor Observation Recording Form</strong> — completed during a practical task in the workshop, and (2) a <strong>Short Answer Questions Recording Form</strong> — completed in class or as a directed study activity. Both must be signed and dated.</div>
+      </div>
+      <div class="card card-accent green">
+        <div class="card-label">Awarding Body</div>
+        <div class="card-title">City & Guilds Registration</div>
+        <div class="card-text">Learners must be registered on Walled Garden before assessment begins. Check registration status at the start of each unit. All portfolio evidence is submitted through the centre's IQA process before the City & Guilds claim deadline. Do not begin assessing unregistered learners.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: SCHEME OF WORK -->
+  <section id="sow">
+    <div class="section-header">
+      <div class="section-num">02</div>
+      <div class="section-title-group">
+        <div class="section-tag">Scheme of Work</div>
+        <div class="section-title">Term-by-Term Unit Delivery Order</div>
+      </div>
+    </div>
+
+    <div class="alert info">
+      <div class="alert-icon">ℹ️</div>
+      <div class="alert-body">
+        <div class="alert-title">Why this order?</div>
+        <div class="alert-text">Units are sequenced to build mechanically on each other and to front-load health & safety compliance (a legal requirement). Staff must not skip ahead. Each unit's practical observation must be signed off before starting the next unit's worksheet.</div>
+      </div>
+    </div>
+
+    <h3 style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:22px;color:var(--red-bright);margin-bottom:16px;">Entry Level 3 — 3902 (10 Units)</h3>
+    <div style="overflow-x:auto;margin-bottom:40px;">
+    <table class="sow-table">
+      <thead>
+        <tr>
+          <th>Week</th>
+          <th>Unit</th>
+          <th>Title</th>
+          <th>Type</th>
+          <th>Key Teaching Content</th>
+          <th>Suggested Resources</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Wk 1–2</td>
+          <td><span class="unit-code">3902-011</span></td>
+          <td>Engine Operating Principles</td>
+          <td><span class="tag tag-theory">Theory</span><span class="tag tag-practical">Practical</span></td>
+          <td>4-stroke cycle, engine components, combustion, compression, power, exhaust strokes. Identify major engine parts on a cut-away engine or diagram.</td>
+          <td>IMI eLearning, YouTube: Lesics channel</td>
+        </tr>
+        <tr>
+          <td>Wk 3–4</td>
+          <td><span class="unit-code">3902-001</span></td>
+          <td>Engine Lubrication Systems</td>
+          <td><span class="tag tag-theory">Theory</span><span class="tag tag-practical">Practical</span></td>
+          <td>Purpose of lubrication, oil types, oil pump, oil filter, dipstick check, oil change procedure, identifying leaks.</td>
+          <td>Haynes manuals, Engineering Mindset YouTube</td>
+        </tr>
+        <tr>
+          <td>Wk 5–6</td>
+          <td><span class="unit-code">3902-002</span></td>
+          <td>Engine Cooling Systems</td>
+          <td><span class="tag tag-theory">Theory</span><span class="tag tag-practical">Practical</span></td>
+          <td>Coolant circuit, water pump, thermostat, radiator, expansion tank, pressure cap. Coolant check and top-up procedure. Cooling system pressure test.</td>
+          <td>Auto Repair Guys YouTube, Bosch Automotive Handbook</td>
+        </tr>
+        <tr>
+          <td>Wk 7–8</td>
+          <td><span class="unit-code">3902-003</span></td>
+          <td>Fuel and Exhaust Systems</td>
+          <td><span class="tag tag-theory">Theory</span><span class="tag tag-practical">Practical</span></td>
+          <td>Fuel delivery, injectors/carburettor, air filter, exhaust system, catalytic converter, lambda sensor basics, emission types.</td>
+          <td>EFI University, IMI Resources, emissions posters</td>
+        </tr>
+        <tr>
+          <td>Wk 9–10</td>
+          <td><span class="unit-code">3902-004</span></td>
+          <td>Spark Ignition Systems</td>
+          <td><span class="tag tag-theory">Theory</span><span class="tag tag-practical">Practical</span></td>
+          <td>HT/LT circuits, spark plugs, ignition coil, distributor/direct ignition, timing. Spark plug inspection and replacement.</td>
+          <td>Multimeter practical, Champion spark plug guide</td>
+        </tr>
+        <tr>
+          <td>Wk 11–12</td>
+          <td><span class="unit-code">3902-005</span></td>
+          <td>Electrical Systems</td>
+          <td><span class="tag tag-theory">Theory</span><span class="tag tag-practical">Practical</span></td>
+          <td>Battery, alternator, starter motor, basic circuits, fuses, relays. Safe working with electrical systems. OHM's law basics.</td>
+          <td>Fluke multimeter guides, Institute of the Motor Industry</td>
+        </tr>
+        <tr>
+          <td>Wk 13–14</td>
+          <td><span class="unit-code">3902-006</span></td>
+          <td>Braking Systems</td>
+          <td><span class="tag tag-theory">Theory</span><span class="tag tag-practical">Practical</span></td>
+          <td>Hydraulic brake circuit, disc and drum brakes, brake pads/shoes, ABS overview, brake fluid. Brake pad inspection. Risk assessment for brake work.</td>
+          <td>Mintex training videos, Brembo technical guides</td>
+        </tr>
+        <tr>
+          <td>Wk 15–16</td>
+          <td><span class="unit-code">3902-007</span></td>
+          <td>Transmission Systems</td>
+          <td><span class="tag tag-theory">Theory</span><span class="tag tag-practical">Practical</span></td>
+          <td>Manual/automatic gearbox, clutch, driveshafts, differential. Fluid checks. Role of transmission in power delivery.</td>
+          <td>ZF training videos, Haynes cutaway diagrams</td>
+        </tr>
+        <tr>
+          <td>Wk 17–18</td>
+          <td><span class="unit-code">3902-008</span></td>
+          <td>Steering and Suspension</td>
+          <td><span class="tag tag-theory">Theory</span><span class="tag tag-practical">Practical</span></td>
+          <td>Rack and pinion, power steering, suspension types (MacPherson, double wishbone), dampers, springs, alignment basics.</td>
+          <td>Monroe suspension training, KYB Technical YouTube</td>
+        </tr>
+        <tr>
+          <td>Wk 19–20</td>
+          <td><span class="unit-code">3902-009</span></td>
+          <td>Wheel and Tyre Systems</td>
+          <td><span class="tag tag-theory">Theory</span><span class="tag tag-practical">Practical</span></td>
+          <td>Tyre construction, markings, pressures, tread depth, legal minimums. Wheel removal and refitting. Tyre inspection procedure. TPMS awareness.</td>
+          <td>Michelin Tyre Education, UK Highway Code Tyre Rules</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h3 style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:22px;color:var(--gold);margin-bottom:16px;">Level 1 Certificate — 7290-10 (Mandatory Units)</h3>
+    <div style="overflow-x:auto;">
+    <table class="sow-table">
+      <thead>
+        <tr>
+          <th>Phase</th>
+          <th>Unit</th>
+          <th>Title</th>
+          <th>Type</th>
+          <th>Key Teaching Content</th>
+          <th>Suggested Resources</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Phase 1</td>
+          <td><span class="unit-code">7290-001</span></td>
+          <td>Health, Safety & Good Housekeeping — Skills</td>
+          <td><span class="tag tag-health">H&S</span><span class="tag tag-practical">Practical</span></td>
+          <td>PPE identification and use. Risk assessment completion (using the 0–6 rating matrix). COSHH, manual handling, workshop hazards. Demonstrate safe tool usage and workshop tidying procedure.</td>
+          <td>HSE.gov.uk, COSHH datasheets, IMI H&S Module</td>
+        </tr>
+        <tr>
+          <td>Phase 1</td>
+          <td><span class="unit-code">7290-051</span></td>
+          <td>Knowledge of Health, Safety & Good Housekeeping</td>
+          <td><span class="tag tag-theory">Theory</span></td>
+          <td>Written evidence of health and safety knowledge. Legislation overview (HASAWA 1974, PUWER). Accident reporting, RIDDOR basics. Learners complete SAQ form under supervised conditions.</td>
+          <td>HSE guidance leaflets, RIDDOR summary poster</td>
+        </tr>
+        <tr>
+          <td>Phase 2</td>
+          <td><span class="unit-code">7290-031</span></td>
+          <td>Working Relationships — Skills</td>
+          <td><span class="tag tag-practical">Practical</span></td>
+          <td>Professional conduct in the automotive workplace. Customer interaction, colleague communication, following instructions, punctuality, appearance standards.</td>
+          <td>IMI Professionalism resources, role-play scenario cards</td>
+        </tr>
+        <tr>
+          <td>Phase 2</td>
+          <td><span class="unit-code">7290-081</span></td>
+          <td>Knowledge of Working Relationships</td>
+          <td><span class="tag tag-theory">Theory</span></td>
+          <td>Written SAQ covering teamwork, equality, workplace ethics, line management structures. Learners complete under supervised conditions.</td>
+          <td>ACAS guidance, sector employer case studies</td>
+        </tr>
+        <tr>
+          <td>Phase 3</td>
+          <td><span class="unit-code">7290-702</span></td>
+          <td>Skills in Vehicle Engine Cooling Systems</td>
+          <td><span class="tag tag-practical">Practical</span><span class="tag tag-theory">Theory</span></td>
+          <td>Pressure test the cooling system. Drain and refill coolant. Identify components and explain their function. Complete risk assessment. SAQ form on cooling system knowledge.</td>
+          <td>Cooling system diagrams, pressure test kit manual, safety datasheets for coolant</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </section>
+
+  <!-- SECTION 3: PROCESS -->
+  <section id="process">
+    <div class="section-header">
+      <div class="section-num">03</div>
+      <div class="section-title-group">
+        <div class="section-tag">Non-Negotiable Process</div>
+        <div class="section-title">The Exact Steps Staff Must Follow — Every Unit, Every Time</div>
+      </div>
+    </div>
+
+    <div class="alert danger">
+      <div class="alert-icon">🔴</div>
+      <div class="alert-body">
+        <div class="alert-title">This is not optional guidance — it is the required process</div>
+        <div class="alert-text">Every step below applies to every unit, for every learner. Shortcuts cause delays at IQA and risk failed claims with the awarding body. If you're unsure about any step, stop and contact the Coordinator before proceeding.</div>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="panel-title">📋 Before the Unit Starts</div>
+        <ol class="checklist">
+          <li>
+            <div class="step-n">1</div>
+            <div class="step-body">
+              <div class="step-title">Confirm Learner Registration</div>
+              <div class="step-detail">Log into City & Guilds Walled Garden. Verify every learner attending is registered for the correct qualification and unit. Do not assess unregistered learners — evidence will be void.</div>
+            </div>
+          </li>
+          <li>
+            <div class="step-n">2</div>
+            <div class="step-body">
+              <div class="step-title">Print & Prepare the Portfolio Pack</div>
+              <div class="step-detail">Print the correct Assessor Observation Recording Form and Short Answer Questions Recording Form for the unit. Have them ready before the session — not during it.</div>
+            </div>
+          </li>
+          <li>
+            <div class="step-n">3</div>
+            <div class="step-body">
+              <div class="step-title">Risk Assessment Sign-Off</div>
+              <div class="step-detail">For any practical unit involving the vehicle or equipment, ensure the relevant risk assessment is displayed in the workshop and signed by the learner before work begins. File the signed copy.</div>
+            </div>
+          </li>
+          <li>
+            <div class="step-n">4</div>
+            <div class="step-body">
+              <div class="step-title">Prepare Teaching Resources</div>
+              <div class="step-detail">Select the teaching resources from Section 4 of this playbook that correspond to the unit. Share the VLE link or video in the session before the practical, not during it.</div>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title">🔧 During the Practical Assessment</div>
+        <ol class="checklist">
+          <li>
+            <div class="step-n">1</div>
+            <div class="step-body">
+              <div class="step-title">Brief the Learner on the Task</div>
+              <div class="step-detail">Explain exactly what the learner must demonstrate. Read out the observation criteria from the recording form so the learner knows what they are being assessed against before they begin.</div>
+            </div>
+          </li>
+          <li>
+            <div class="step-n">2</div>
+            <div class="step-body">
+              <div class="step-title">Observe — Do Not Assist</div>
+              <div class="step-detail">During the assessed task, do not guide or correct the learner. Your role is to observe and record. If safety is at risk, stop the task and record it as a resubmission, not a pass.</div>
+            </div>
+          </li>
+          <li>
+            <div class="step-n">3</div>
+            <div class="step-body">
+              <div class="step-title">Complete the Observation Form in Real Time</div>
+              <div class="step-detail">Tick each criteria as you observe it. Add written comments in every cell — do not leave cells blank. Record date, location, vehicle/equipment used, and witness details where required.</div>
+            </div>
+          </li>
+          <li>
+            <div class="step-n">4</div>
+            <div class="step-body">
+              <div class="step-title">Sign and Date Every Page</div>
+              <div class="step-detail">Both assessor and learner must sign each page of the observation form on the day. Do not allow retrospective signing. IQA will reject unsigned or undated evidence.</div>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <div style="height:24px;"></div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="panel-title">✏️ Short Answer Questions (SAQ)</div>
+        <ol class="checklist">
+          <li>
+            <div class="step-n">1</div>
+            <div class="step-body">
+              <div class="step-title">Administer Under Controlled Conditions</div>
+              <div class="step-detail">SAQs must be completed by the learner independently. No reference to notes, textbooks, or phones unless explicitly permitted by City & Guilds for that unit. Seat learners apart.</div>
+            </div>
+          </li>
+          <li>
+            <div class="step-n">2</div>
+            <div class="step-body">
+              <div class="step-title">Learner Completes Their Own Answers</div>
+              <div class="step-detail">The learner must write in their own handwriting (or type, if a scribe arrangement is in place). Never transcribe answers on behalf of a learner without a formal access arrangement documented on their file.</div>
+            </div>
+          </li>
+          <li>
+            <div class="step-n">3</div>
+            <div class="step-body">
+              <div class="step-title">Mark and Record on the Form</div>
+              <div class="step-detail">Mark each SAQ response against the marking guidance in the City & Guilds assessment specification. Record the mark on the form itself. Sign, date, and add your assessor number.</div>
+            </div>
+          </li>
+          <li>
+            <div class="step-n">4</div>
+            <div class="step-body">
+              <div class="step-title">Action Referrals Within 5 Working Days</div>
+              <div class="step-detail">If a learner does not achieve the SAQ, issue a resubmission within 5 working days with targeted feedback. Do not leave learners with no-pass evidence sitting in folders unchallenged.</div>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title">📁 After Each Unit — Portfolio & IQA</div>
+        <ol class="checklist">
+          <li>
+            <div class="step-n">1</div>
+            <div class="step-body">
+              <div class="step-title">File in the Portfolio Immediately</div>
+              <div class="step-detail">Completed and signed observation form + completed and marked SAQ go into the learner's portfolio on the day of completion. Evidence that is not filed promptly gets lost.</div>
+            </div>
+          </li>
+          <li>
+            <div class="step-n">2</div>
+            <div class="step-body">
+              <div class="step-title">Update the Unit Tracker Worksheet</div>
+              <div class="step-detail">Mark the unit as complete on the Candidate Unit Tracking Worksheet at the front of the portfolio. Initial and date the entry. This is what the IQA checks first.</div>
+            </div>
+          </li>
+          <li>
+            <div class="step-n">3</div>
+            <div class="step-body">
+              <div class="step-title">Submit to IQA Within One Week of Completion</div>
+              <div class="step-detail">Do not batch units to submit at the end of the year. Submit each completed unit to the IQA within one week. Batching at year-end is a primary cause of delayed claims and is not acceptable practice.</div>
+            </div>
+          </li>
+          <li>
+            <div class="step-n">4</div>
+            <div class="step-body">
+              <div class="step-title">Act on IQA Feedback Immediately</div>
+              <div class="step-detail">If the IQA flags missing evidence, gaps, or quality concerns, these must be resolved within 5 working days. Do not set IQA feedback aside and plan to address it later.</div>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: RESOURCES -->
+  <section id="resources">
+    <div class="section-header">
+      <div class="section-num">04</div>
+      <div class="section-title-group">
+        <div class="section-tag">Teaching Resources</div>
+        <div class="section-title">Vetted Links, Videos & Materials — Unit by Unit</div>
+      </div>
+    </div>
+
+    <div class="alert success">
+      <div class="alert-icon">✅</div>
+      <div class="alert-body">
+        <div class="alert-title">Using these resources</div>
+        <div class="alert-text">All links below are free to access and require no login unless noted. Use the videos as pre-class preparation or in-class starters. The interactive HTML activities from our GitHub Pages library (laurencesait.github.io) are designed specifically for our learners and should be prioritised over generic content.</div>
+      </div>
+    </div>
+
+    <div class="resources">
+      <div class="resource-card">
+        <div class="resource-header">
+          <div class="resource-icon">🎬</div>
+          <div class="resource-type">Video — Engine Principles</div>
+        </div>
+        <div class="resource-body">
+          <div class="resource-title">How a 4-Stroke Engine Works</div>
+          <div class="resource-desc">Clear animation of the 4-stroke cycle with combustion explanation. Ideal as a lesson starter for 3902-011. Lesics channel — high production quality.</div>
+          <a class="resource-link" href="https://www.youtube.com/watch?v=toVfvRhWbj8" target="_blank">▶ Watch on YouTube →</a>
+        </div>
+      </div>
+
+      <div class="resource-card">
+        <div class="resource-header">
+          <div class="resource-icon">🎬</div>
+          <div class="resource-type">Video — Lubrication</div>
+        </div>
+        <div class="resource-body">
+          <div class="resource-title">Engine Oil System Explained</div>
+          <div class="resource-desc">The Engineering Mindset — covers oil pump, galleries, filter, and viscosity grades. Suitable for 3902-001 theory component. Good detail without being too technical.</div>
+          <a class="resource-link" href="https://www.youtube.com/watch?v=3VLMnAT8B8A" target="_blank">▶ Watch on YouTube →</a>
+        </div>
+      </div>
+
+      <div class="resource-card">
+        <div class="resource-header">
+          <div class="resource-icon">🎬</div>
+          <div class="resource-type">Video — Cooling Systems</div>
+        </div>
+        <div class="resource-body">
+          <div class="resource-title">Vehicle Cooling System — How it Works</div>
+          <div class="resource-desc">Covers coolant flow, thermostat operation, and radiator function. Perfect companion for 3902-002 and 7290-702. Auto Repair Guys channel.</div>
+          <a class="resource-link" href="https://www.youtube.com/watch?v=AXthPMBa1OE" target="_blank">▶ Watch on YouTube →</a>
+        </div>
+      </div>
+
+      <div class="resource-card">
+        <div class="resource-header">
+          <div class="resource-icon">🎬</div>
+          <div class="resource-type">Video — Brakes</div>
+        </div>
+        <div class="resource-body">
+          <div class="resource-title">Disc Brakes — How do they work?</div>
+          <div class="resource-desc">Explains hydraulic circuit, caliper, pad contact. Lesics animation-style. Use for 3902-006 theory starter. Pairs well with a workshop brake pad inspection activity.</div>
+          <a class="resource-link" href="https://www.youtube.com/watch?v=9cA1ZrVDFuA" target="_blank">▶ Watch on YouTube →</a>
+        </div>
+      </div>
+
+      <div class="resource-card">
+        <div class="resource-header">
+          <div class="resource-icon">🎬</div>
+          <div class="resource-type">Video — Electrical Systems</div>
+        </div>
+        <div class="resource-body">
+          <div class="resource-title">Car Electrical Systems Explained</div>
+          <div class="resource-desc">Battery, alternator, starter motor, and circuit basics. Engineering Mindset. Essential pre-reading for 3902-005. Recommend as homework viewing the session before the practical.</div>
+          <a class="resource-link" href="https://www.youtube.com/watch?v=rWbLJMPCrdo" target="_blank">▶ Watch on YouTube →</a>
+        </div>
+      </div>
+
+      <div class="resource-card">
+        <div class="resource-header">
+          <div class="resource-icon">🎬</div>
+          <div class="resource-type">Video — Tyres & Wheels</div>
+        </div>
+        <div class="resource-body">
+          <div class="resource-title">Tyre Markings & Construction Explained</div>
+          <div class="resource-desc">Covers sidewall markings, load/speed ratings, tread depth legal minimums. Michelin-produced content. Use for 3902-009. Cross-reference with Highway Code rules on tyre safety.</div>
+          <a class="resource-link" href="https://www.youtube.com/watch?v=7bFwHsBpDbs" target="_blank">▶ Watch on YouTube →</a>
+        </div>
+      </div>
+
+      <div class="resource-card">
+        <div class="resource-header">
+          <div class="resource-icon">🌐</div>
+          <div class="resource-type">Website — Health & Safety</div>
+        </div>
+        <div class="resource-body">
+          <div class="resource-title">HSE — Workplace Health & Safety</div>
+          <div class="resource-desc">Official Health and Safety Executive website. Use for COSHH datasheets, RIDDOR guidance, and risk assessment templates. Essential reference for 7290-001 and 7290-051.</div>
+          <a class="resource-link" href="https://www.hse.gov.uk" target="_blank">hse.gov.uk →</a>
+        </div>
+      </div>
+
+      <div class="resource-card">
+        <div class="resource-header">
+          <div class="resource-icon">🌐</div>
+          <div class="resource-type">Website — IMI Resources</div>
+        </div>
+        <div class="resource-body">
+          <div class="resource-title">Institute of the Motor Industry — Learner Hub</div>
+          <div class="resource-desc">Sector-specific technical guides, eLearning content, and career pathways. IMI eLearning modules align well with City & Guilds units. Recommend learners self-enrol for free materials.</div>
+          <a class="resource-link" href="https://www.theimi.org.uk" target="_blank">theimi.org.uk →</a>
+        </div>
+      </div>
+
+      <div class="resource-card">
+        <div class="resource-header">
+          <div class="resource-icon">🌐</div>
+          <div class="resource-type">Website — Awarding Body</div>
+        </div>
+        <div class="resource-body">
+          <div class="resource-title">City & Guilds — Qualification Specifications</div>
+          <div class="resource-desc">Download the official assessment specifications and marking guidance for both 3902 and 7290-10 here. Staff must have read these specifications before assessing any unit.</div>
+          <a class="resource-link" href="https://www.cityandguilds.com/qualifications-and-apprenticeships/automotive/road-vehicle-maintenance" target="_blank">cityandguilds.com →</a>
+        </div>
+      </div>
+
+      <div class="resource-card">
+        <div class="resource-header">
+          <div class="resource-icon">💻</div>
+          <div class="resource-type">Interactive App — ESC Internal</div>
+        </div>
+        <div class="resource-body">
+          <div class="resource-title">ESC Motor Vehicle Learning Suite (GitHub Pages)</div>
+          <div class="resource-desc">Interactive HTML activities covering EV awareness, engine systems, braking, transmission, and more — built specifically for our learners. No login required. Works on any device.</div>
+          <a class="resource-link" href="https://laurencesait.github.io" target="_blank">laurencesait.github.io →</a>
+        </div>
+      </div>
+
+      <div class="resource-card">
+        <div class="resource-header">
+          <div class="resource-icon">📄</div>
+          <div class="resource-type">Reference — Tyre Safety</div>
+        </div>
+        <div class="resource-body">
+          <div class="resource-title">TyreSafe — Tyre Safety Information</div>
+          <div class="resource-desc">Clear, learner-friendly content on tyre safety, legal minimums, and checking procedure. Free downloadable posters available for workshop display. Use for 3902-009.</div>
+          <a class="resource-link" href="https://www.tyresafe.org" target="_blank">tyresafe.org →</a>
+        </div>
+      </div>
+
+      <div class="resource-card">
+        <div class="resource-header">
+          <div class="resource-icon">📄</div>
+          <div class="resource-type">Reference — Haynes Manuals</div>
+        </div>
+        <div class="resource-body">
+          <div class="resource-title">Haynes Online — Vehicle Technical Manuals</div>
+          <div class="resource-desc">Haynes Online provides step-by-step procedures for specific vehicles. Centre subscription recommended. Use for unit-specific practical procedures and component identification activities.</div>
+          <a class="resource-link" href="https://www.haynes.com/en-gb" target="_blank">haynes.com →</a>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:32px;">
+    <div class="alert warning">
+      <div class="alert-icon">📹</div>
+      <div class="alert-body">
+        <div class="alert-title">YouTube Tip for Classroom Use</div>
+        <div class="alert-text">If YouTube is blocked on the college network, download videos in advance using an authorised offline tool, or request that IT whitelist the specific video URLs. Do not rely on live streaming from the classroom — test all links the session before you need them.</div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: ASSESSMENT GUIDANCE -->
+  <section id="assessment">
+    <div class="section-header">
+      <div class="section-num">05</div>
+      <div class="section-title-group">
+        <div class="section-tag">Assessment Guidance</div>
+        <div class="section-title">What Good Evidence Looks Like — and What Will Be Rejected</div>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div>
+        <div class="panel" style="margin-bottom:16px;">
+          <div class="panel-title" style="color:var(--success);">✅ What IQA Expects to See</div>
+          <ul class="checklist">
+            <li><div class="check-box">✓</div><div>Assessor observation form fully completed — no blank cells</div></li>
+            <li><div class="check-box">✓</div><div>Assessor and learner signatures on every page, dated on the day of assessment</div></li>
+            <li><div class="check-box">✓</div><div>Written assessor comments that specifically describe what the learner did to meet each criterion</div></li>
+            <li><div class="check-box">✓</div><div>SAQ responses in the learner's own words, marked and annotated by the assessor</div></li>
+            <li><div class="check-box">✓</div><div>Risk assessment signed by the learner before the practical activity begins</div></li>
+            <li><div class="check-box">✓</div><div>Unit tracker worksheet updated with assessor initials and date</div></li>
+            <li><div class="check-box">✓</div><div>Learner registration confirmed on Walled Garden before evidence is collected</div></li>
+            <li><div class="check-box">✓</div><div>For L1 7290-001: risk rating documented using the 0–6 matrix (0–2 low, 3–4 medium, 5–6 high)</div></li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="panel">
+          <div class="panel-title" style="color:var(--red-bright);">❌ Common Reasons Evidence is Rejected</div>
+          <ul class="checklist">
+            <li><div class="check-box" style="border-color:var(--red);">✗</div><div>Observation form signed retrospectively — not on the day of the observed task</div></li>
+            <li><div class="check-box" style="border-color:var(--red);">✗</div><div>Assessor comments that simply repeat the criterion ("learner completed the task") — no specific detail</div></li>
+            <li><div class="check-box" style="border-color:var(--red);">✗</div><div>SAQ answers that appear identical across multiple learners — suspected collusion</div></li>
+            <li><div class="check-box" style="border-color:var(--red);">✗</div><div>Missing learner signature on any page</div></li>
+            <li><div class="check-box" style="border-color:var(--red);">✗</div><div>Risk assessment not present or signed after the practical has taken place</div></li>
+            <li><div class="check-box" style="border-color:var(--red);">✗</div><div>Unregistered learner assessed — evidence cannot be claimed</div></li>
+            <li><div class="check-box" style="border-color:var(--red);">✗</div><div>Portfolios submitted to IQA with multiple units incomplete — batching at year end</div></li>
+            <li><div class="check-box" style="border-color:var(--red);">✗</div><div>Evidence from a demonstration by the assessor counted as learner evidence</div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:24px;">
+    <div class="panel">
+      <div class="panel-title">📝 Writing Good Assessor Observation Comments</div>
+      <p style="color:#8a9bb0;font-size:14px;margin-bottom:16px;">The most common quality failure is vague assessor comments. Below are examples of unacceptable versus acceptable evidence statements.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <div>
+          <div style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--red-bright);margin-bottom:8px;">❌ Unacceptable</div>
+          <div style="background:rgba(192,57,43,0.1);border:1px solid rgba(192,57,43,0.3);border-radius:4px;padding:14px;font-size:13px;color:#c5d3de;line-height:1.6;">
+            "Learner completed the task correctly." <br><br>
+            "Task was carried out to a satisfactory standard." <br><br>
+            "The learner demonstrated the required skills." <br><br>
+            "Good." <br><br>
+            "Pass."
+          </div>
+        </div>
+        <div>
+          <div style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--success);margin-bottom:8px;">✅ Acceptable</div>
+          <div style="background:rgba(39,174,96,0.1);border:1px solid rgba(39,174,96,0.3);border-radius:4px;padding:14px;font-size:13px;color:#c5d3de;line-height:1.6;">
+            "Learner correctly identified the engine oil dipstick, removed it, wiped it clean, reinserted fully and checked the oil level against the min/max markings." <br><br>
+            "Learner used a coolant pressure tester to pressurise the cooling system to 1 bar and held pressure for 2 minutes with no leaks identified." <br><br>
+            "Learner correctly selected PPE (gloves, safety glasses) before beginning brake pad removal and verbally explained the reason for each item when prompted."
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: DEADLINES -->
+  <section id="deadlines">
+    <div class="section-header">
+      <div class="section-num">06</div>
+      <div class="section-title-group">
+        <div class="section-tag">Key Dates & Deadlines</div>
+        <div class="section-title">Milestones That Cannot Slip</div>
+      </div>
+    </div>
+
+    <div class="alert danger">
+      <div class="alert-icon">📅</div>
+      <div class="alert-body">
+        <div class="alert-title">Missing the claim deadline means learners do not achieve. There are no extensions.</div>
+        <div class="alert-text">City & Guilds claim deadlines are fixed. If portfolios are not IQA-signed and submitted before the deadline, the learner does not receive their certificate that year. This has happened before. It will not happen again.</div>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="panel-title">🗓 Recommended Internal Timeline</div>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-week">September — Week 1</div>
+            <div class="tl-title">Learner Registration on Walled Garden</div>
+            <div class="tl-detail">All learners registered before the first assessment. Coordinator to confirm. No exceptions.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-week">September — Week 2</div>
+            <div class="tl-title">Portfolios Issued &amp; Introduction Session</div>
+            <div class="tl-detail">Each learner receives their portfolio. Staff walk through the unit structure and explain how evidence is collected. Learners sign the declaration page.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-week">October — End of Month</div>
+            <div class="tl-title">Units 1–3 Complete &amp; Submitted to IQA</div>
+            <div class="tl-detail">First three units in the scheme of work must be assessed, filed, and IQA-ready by this date.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-week">December — End of Term</div>
+            <div class="tl-title">Units 4–6 Complete &amp; IQA-Sampled</div>
+            <div class="tl-detail">Mid-point check. IQA to produce interim sampling report. Any gaps or quality issues to be resolved in January — not left to summer.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-week">March — End of Month</div>
+            <div class="tl-title">All Units Complete — Internal Deadline</div>
+            <div class="tl-detail">Every unit must be assessed and in the portfolio by this date. This gives 8 weeks of IQA time before the claim window.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-week">May — Early</div>
+            <div class="tl-title">IQA Sign-Off Complete</div>
+            <div class="tl-detail">IQA to have sampled all portfolios and issued sign-off. Any remaining actions resolved this week only.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-week">May — Mid (Check Walled Garden)</div>
+            <div class="tl-title">Results Claim Submitted to City &amp; Guilds</div>
+            <div class="tl-detail">Coordinator submits results claim. Learners achieve. Certificates processed by City & Guilds within 4–6 weeks of claim.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title">🚨 Escalation Protocol</div>
+        <p style="color:#8a9bb0;font-size:13px;margin-bottom:16px;">If any of the following occur, the staff member must notify the Coordinator that same day — not at the next team meeting, not by email later in the week. Same day.</p>
+
+        <div class="deadline-strip">
+          <div class="deadline-label">Escalate Immediately If:</div>
+          <div class="deadline-text">A learner fails to attend the practical assessment session</div>
+        </div>
+        <div class="deadline-strip">
+          <div class="deadline-label">Escalate Immediately If:</div>
+          <div class="deadline-text">Suspected collusion is identified in SAQ responses</div>
+        </div>
+        <div class="deadline-strip">
+          <div class="deadline-label">Escalate Immediately If:</div>
+          <div class="deadline-text">A learner is found to be unregistered on Walled Garden</div>
+        </div>
+        <div class="deadline-strip">
+          <div class="deadline-label">Escalate Immediately If:</div>
+          <div class="deadline-text">Evidence has been lost, damaged, or cannot be located</div>
+        </div>
+        <div class="deadline-strip">
+          <div class="deadline-label">Escalate Immediately If:</div>
+          <div class="deadline-text">IQA flags a serious quality concern on a portfolio</div>
+        </div>
+
+        <div style="margin-top:24px;">
+          <div class="panel-title" style="font-size:17px;">📞 Key Contacts</div>
+          <div style="display:grid;grid-template-columns:auto 1fr;gap:8px 16px;font-size:13px;color:#c5d3de;align-items:center;margin-top:8px;">
+            <div style="color:var(--gold);font-weight:600;">Coordinator</div><div>Motor Vehicle &amp; Motorsport — ESC</div>
+            <div style="color:var(--gold);font-weight:600;">IQA</div><div>Internal Quality Assurer — confirm name with Coordinator</div>
+            <div style="color:var(--gold);font-weight:600;">EQA</div><div>City &amp; Guilds External Quality Assurer — contact via Walled Garden</div>
+            <div style="color:var(--gold);font-weight:600;">Walled Garden</div><div><a href="https://www.cityandguilds.com/about-us/contact-us" target="_blank" style="color:#5dade2;text-decoration:none;">cityandguilds.com/walled-garden →</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPENDIX: QUICK REF -->
+  <section>
+    <div class="section-header">
+      <div class="section-num">07</div>
+      <div class="section-title-group">
+        <div class="section-tag">Quick Reference</div>
+        <div class="section-title">Unit Summary — Print and Post in the Workshop</div>
+      </div>
+    </div>
+
+    <div class="cards">
+      <div class="card card-accent red">
+        <div class="card-label">3902-001</div>
+        <div class="card-title">Lubrication Systems</div>
+        <div class="card-text">Evidence: Observation (oil check, oil change) + SAQ (lubrication principles). Sign on the day.</div>
+      </div>
+      <div class="card card-accent red">
+        <div class="card-label">3902-002</div>
+        <div class="card-title">Cooling Systems</div>
+        <div class="card-text">Evidence: Observation (coolant check, pressure test) + SAQ (cooling circuit knowledge).</div>
+      </div>
+      <div class="card card-accent red">
+        <div class="card-label">3902-003</div>
+        <div class="card-title">Fuel & Exhaust</div>
+        <div class="card-text">Evidence: Observation (air filter check, exhaust inspection) + SAQ (fuel delivery, emissions).</div>
+      </div>
+      <div class="card card-accent red">
+        <div class="card-label">3902-004</div>
+        <div class="card-title">Spark Ignition</div>
+        <div class="card-text">Evidence: Observation (spark plug removal + inspection) + SAQ (ignition circuit knowledge).</div>
+      </div>
+      <div class="card card-accent red">
+        <div class="card-label">3902-005</div>
+        <div class="card-title">Electrical Systems</div>
+        <div class="card-text">Evidence: Observation (battery/multimeter) + SAQ (circuits, Ohm's law, battery safety).</div>
+      </div>
+      <div class="card card-accent red">
+        <div class="card-label">3902-006</div>
+        <div class="card-title">Braking Systems</div>
+        <div class="card-text">Evidence: Observation (brake pad inspection) + SAQ (hydraulic brakes, ABS). Risk assessment required.</div>
+      </div>
+      <div class="card card-accent red">
+        <div class="card-label">3902-007</div>
+        <div class="card-title">Transmission</div>
+        <div class="card-text">Evidence: Observation (fluid check, identification) + SAQ (gearbox types, clutch, driveshafts).</div>
+      </div>
+      <div class="card card-accent red">
+        <div class="card-label">3902-008</div>
+        <div class="card-title">Steering & Suspension</div>
+        <div class="card-text">Evidence: Observation (damper check, steering play) + SAQ (suspension geometry basics).</div>
+      </div>
+      <div class="card card-accent red">
+        <div class="card-label">3902-009</div>
+        <div class="card-title">Wheels & Tyres</div>
+        <div class="card-text">Evidence: Observation (tyre check, wheel removal) + SAQ (markings, tread depth, legal limits).</div>
+      </div>
+      <div class="card card-accent red">
+        <div class="card-label">3902-011</div>
+        <div class="card-title">Engine Operating Principles</div>
+        <div class="card-text">Evidence: Observation (engine ID task) + SAQ (4-stroke cycle, component functions).</div>
+      </div>
+      <div class="card card-accent gold">
+        <div class="card-label">7290-001 / 7290-051</div>
+        <div class="card-title">Health & Safety (Skills + Knowledge)</div>
+        <div class="card-text">Evidence: Observation (risk assessment, PPE) + SAQ (legislation, RIDDOR, COSHH). 0–6 risk matrix required.</div>
+      </div>
+      <div class="card card-accent gold">
+        <div class="card-label">7290-031 / 7290-081</div>
+        <div class="card-title">Working Relationships</div>
+        <div class="card-text">Evidence: Observation (professional conduct) + SAQ (teamwork, equality, workplace ethics).</div>
+      </div>
+      <div class="card card-accent gold">
+        <div class="card-label">7290-702</div>
+        <div class="card-title">Engine Cooling Systems (L1)</div>
+        <div class="card-text">Evidence: Observation (full cooling system practical) + SAQ (component knowledge). Risk assessment mandatory.</div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div>East Surrey College — Motor Vehicle &amp; Motorsport Department</div>
+  <div style="margin-top:6px;">Qualification Delivery Playbook — 2025–26 Academic Year</div>
+  <div style="margin-top:6px;color:#4a5f72;">City &amp; Guilds <span>7290-10</span> Level 1 Certificate in Vehicle Maintenance | City &amp; Guilds <span>3902</span> Entry Level 3 Diploma in Vehicle System and Maintenance</div>
+  <div style="margin-top:12px;font-size:11px;color:#3a4f62;">For internal use only. Not for distribution outside the department. All City &amp; Guilds assessment specifications remain the property of City &amp; Guilds.</div>
+</footer>
+
+</body>
+</html>
