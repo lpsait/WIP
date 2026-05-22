@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ESC Motor Vehicle — Staff Qualification Playbooks 2025–26</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --navy:#0d1b2a; --navy-mid:#1a2d42; --navy-light:#243b55; --gold:#f39c12; --gold-light:#f9ca5a; --white:#f5f5f0; --grey:#8a9bb0; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:'Barlow',sans-serif; background:var(--navy); color:var(--white); min-height:100vh; }
+  header { background:var(--navy-mid); border-bottom:4px solid var(--gold); padding:20px 40px; }
+  .header-inner { max-width:960px; margin:0 auto; display:flex; align-items:center; gap:16px; }
+  .esc-badge { background:var(--gold); color:var(--navy); font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:13px; letter-spacing:2px; text-transform:uppercase; padding:5px 14px; border-radius:3px; }
+  .header-title { font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:22px; }
+  .header-sub { font-size:12px; color:var(--grey); text-transform:uppercase; letter-spacing:1px; }
+  .hero { max-width:960px; margin:0 auto; padding:56px 40px 24px; }
+  .hero-eyebrow { font-family:'Barlow Condensed',sans-serif; font-size:12px; font-weight:600; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:12px; }
+  .hero h1 { font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:clamp(38px,6vw,64px); line-height:1; margin-bottom:16px; }
+  .hero h1 span { color:var(--gold); }
+  .hero-desc { color:#a8bcce; font-size:15px; font-weight:300; max-width:600px; line-height:1.7; margin-bottom:32px; }
+  .year-strip { background:var(--navy-mid); border:1px solid var(--navy-light); border-left:4px solid var(--gold); border-radius:4px; padding:14px 20px; max-width:960px; margin:0 auto 32px; display:flex; gap:32px; flex-wrap:wrap; }
+  .ys-item { display:flex; flex-direction:column; }
+  .ys-label { font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--grey); margin-bottom:3px; }
+  .ys-value { font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:16px; color:var(--white); }
+  .ys-value.red { color:#e74c3c; }
+  .ys-value.gold { color:var(--gold); }
+  .ys-value.purple { color:#a569bd; }
+  .cards-wrap { max-width:960px; margin:0 auto; padding:0 40px 64px; display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:20px; }
+  a.qual-card { display:block; text-decoration:none; border-radius:8px; overflow:hidden; border:1px solid var(--navy-light); background:var(--navy-mid); transition:transform 0.2s,border-color 0.2s,box-shadow 0.2s; }
+  a.qual-card:hover { transform:translateY(-4px); box-shadow:0 12px 40px rgba(0,0,0,0.4); }
+  .card-stripe { height:6px; }
+  .card-inner { padding:24px; }
+  .card-level { font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:52px; line-height:1; margin-bottom:4px; }
+  .card-qual { font-size:11px; font-weight:600; letter-spacing:1.5px; text-transform:uppercase; color:var(--grey); margin-bottom:10px; }
+  .card-name { font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:19px; color:var(--white); margin-bottom:10px; line-height:1.2; }
+  .card-ref { font-size:12px; color:var(--grey); margin-bottom:14px; }
+  .meta-row { font-size:12px; color:#8a9bb0; display:flex; gap:8px; align-items:center; margin-bottom:5px; line-height:1.4; }
+  .meta-dot { width:5px; height:5px; border-radius:50%; flex-shrink:0; }
+  .deadline-badge { display:inline-flex; align-items:center; gap:6px; font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:5px 10px; border-radius:3px; margin-top:10px; margin-bottom:4px; }
+  .card-btn { display:inline-block; font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:14px; letter-spacing:1px; text-transform:uppercase; padding:9px 18px; border-radius:4px; margin-top:12px; }
+  .e3 .card-stripe { background:#c0392b; } .e3 .card-level { color:#e74c3c; } .e3:hover { border-color:#c0392b; } .e3 .card-btn { background:rgba(192,57,43,0.2); color:#e74c3c; } .e3 .meta-dot { background:#e74c3c; } .e3 .deadline-badge { background:rgba(192,57,43,0.2); color:#e74c3c; }
+  .l1 .card-stripe { background:var(--gold); } .l1 .card-level { color:var(--gold); } .l1:hover { border-color:var(--gold); } .l1 .card-btn { background:rgba(243,156,18,0.2); color:var(--gold); } .l1 .meta-dot { background:var(--gold); } .l1 .deadline-badge { background:rgba(243,156,18,0.15); color:var(--gold); }
+  .l2 .card-stripe { background:#7d3c98; } .l2 .card-level { color:#a569bd; } .l2:hover { border-color:#7d3c98; } .l2 .card-btn { background:rgba(125,60,152,0.2); color:#a569bd; } .l2 .meta-dot { background:#a569bd; } .l2 .deadline-badge { background:rgba(125,60,152,0.2); color:#a569bd; }
+  .enrichment-banner { max-width:960px; margin:0 auto 32px; padding:0 40px; }
+  .eb-inner { background:linear-gradient(135deg,rgba(243,156,18,0.15),rgba(243,156,18,0.05)); border:1px solid rgba(243,156,18,0.3); border-radius:6px; padding:20px 24px; display:flex; gap:20px; align-items:center; flex-wrap:wrap; }
+  .eb-icon { font-size:32px; flex-shrink:0; }
+  .eb-title { font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:18px; color:var(--gold); margin-bottom:4px; }
+  .eb-text { font-size:13px; color:#a8bcce; line-height:1.5; }
+  .footer-note { max-width:960px; margin:0 auto; padding:32px 40px 40px; text-align:center; font-size:12px; color:var(--grey); border-top:1px solid var(--navy-light); }
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="esc-badge">ESC</div>
+    <div>
+      <div class="header-title">Motor Vehicle & Motorsport</div>
+      <div class="header-sub">Staff Qualification Playbooks — 2025–26</div>
+    </div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-eyebrow">East Surrey College — Coordinator Resource</div>
+  <h1>Qualification<br><span>Playbooks</span></h1>
+  <p class="hero-desc">Select a qualification below. Every playbook targets completion of all learning and assessment by mid-February, with a structured technical enrichment programme running through to the end of June.</p>
+</div>
+
+<div class="year-strip" style="padding:14px 40px;max-width:960px;margin:0 auto 24px;">
+  <div class="ys-item"><div class="ys-label">Assessment Deadline</div><div class="ys-value red">Mid-February 2026</div></div>
+  <div class="ys-item"><div class="ys-label">IQA Sign-Off</div><div class="ys-value gold">End of March 2026</div></div>
+  <div class="ys-item"><div class="ys-label">Results Claim</div><div class="ys-value gold">End of April 2026</div></div>
+  <div class="ys-item"><div class="ys-label">Enrichment Programme</div><div class="ys-value purple">March → June 2026</div></div>
+</div>
+
+<div class="enrichment-banner">
+  <div class="eb-inner">
+    <div class="eb-icon">🔧</div>
+    <div>
+      <div class="eb-title">Post-Qualification Enrichment — March to June 2026</div>
+      <div class="eb-text">Once qualifications are complete, all three cohorts move into a shared technical enrichment programme in the workshop. Each playbook contains the full enrichment scheme. Topics go beyond the qualification — diagnostics, EV systems, motorsport engineering, fabrication projects, and industry readiness. Full workshop and vehicle access throughout.</div>
+    </div>
+  </div>
+</div>
+
+<div class="cards-wrap">
+  <a class="qual-card e3" href="playbook_e3.html">
+    <div class="card-stripe"></div>
+    <div class="card-inner">
+      <div class="card-level">E3</div>
+      <div class="card-qual">Entry Level 3</div>
+      <div class="card-name">Diploma in Vehicle System and Maintenance</div>
+      <div class="card-ref">City & Guilds — 3902</div>
+      <div class="meta-row"><div class="meta-dot"></div>10 units — Observation + SAQ every unit</div>
+      <div class="meta-row"><div class="meta-dot"></div>Sept → mid-Feb: all units assessed</div>
+      <div class="meta-row"><div class="meta-dot"></div>March → June: technical enrichment</div>
+      <div class="deadline-badge">🎯 All units done by 13 Feb 2026</div>
+      <span class="card-btn">Open E3 Playbook →</span>
+    </div>
+  </a>
+  <a class="qual-card l1" href="playbook_l1.html">
+    <div class="card-stripe"></div>
+    <div class="card-inner">
+      <div class="card-level">L1</div>
+      <div class="card-qual">Level 1</div>
+      <div class="card-name">Certificate in Vehicle Maintenance</div>
+      <div class="card-ref">City & Guilds — 7290-10</div>
+      <div class="meta-row"><div class="meta-dot"></div>5 units — Observation + SAQ</div>
+      <div class="meta-row"><div class="meta-dot"></div>Unit 031 requires 3 observed occasions</div>
+      <div class="meta-row"><div class="meta-dot"></div>March → June: technical enrichment</div>
+      <div class="deadline-badge">🎯 All units done by 13 Feb 2026</div>
+      <span class="card-btn">Open L1 Playbook →</span>
+    </div>
+  </a>
+  <a class="qual-card l2" href="playbook_l2.html">
+    <div class="card-stripe"></div>
+    <div class="card-inner">
+      <div class="card-level">L2</div>
+      <div class="card-qual">Level 2 — Primary Focus 2025–26</div>
+      <div class="card-name">Diploma/Certificate in Light Vehicle Maintenance and Repair Principles</div>
+      <div class="card-ref">City & Guilds — 7290-12 / 7290-17</div>
+      <div class="meta-row"><div class="meta-dot"></div>10 units incl. 2 Evolve online tests</div>
+      <div class="meta-row"><div class="meta-dot"></div>Evolve tests booked by Dec, sat by Jan</div>
+      <div class="meta-row"><div class="meta-dot"></div>March → June: technical enrichment</div>
+      <div class="deadline-badge">🎯 All units done by 13 Feb 2026</div>
+      <span class="card-btn">Open L2 Playbook →</span>
+    </div>
+  </a>
+</div>
+
+<div class="footer-note">
+  East Surrey College — Motor Vehicle & Motorsport Department &nbsp;|&nbsp; 2025–26 Academic Year<br>
+  <span style="color:#3a4f62;">For internal staff use only. Not for distribution outside the department.</span>
+</div>
+</body>
+</html>

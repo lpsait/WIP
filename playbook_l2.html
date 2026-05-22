@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L2 Playbook — City & Guilds 7290-12/17 Light Vehicle Maintenance</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --navy:#0d1b2a; --navy-mid:#1a2d42; --navy-light:#243b55; --accent:#7d3c98; --accent-bright:#a569bd; --accent-pale:rgba(125,60,152,0.12); --gold:#f39c12; --gold-light:#f9ca5a; --white:#f5f5f0; --grey:#8a9bb0; --success:#27ae60; --warn:#e67e22; --red:#c0392b; --red-bright:#e74c3c; --online:#2471a3; --online-bright:#5dade2; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:'Barlow',sans-serif; background:var(--navy); color:var(--white); font-size:15px; line-height:1.6; }
+  header { background:var(--navy-mid); border-bottom:4px solid var(--accent-bright); position:sticky; top:0; z-index:100; box-shadow:0 4px 24px rgba(0,0,0,0.5); }
+  .header-inner { max-width:1200px; margin:0 auto; padding:14px 32px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+  .hb { display:flex; align-items:center; gap:14px; }
+  .back-link { color:var(--grey); text-decoration:none; font-size:12px; font-weight:500; padding:5px 10px; border:1px solid var(--navy-light); border-radius:3px; transition:all 0.2s; }
+  .back-link:hover { color:var(--white); border-color:var(--grey); }
+  .level-badge { background:var(--accent); color:#fff; font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:22px; padding:2px 12px; border-radius:3px; line-height:1.2; }
+  .brand-title { font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:19px; }
+  .brand-sub { font-size:11px; color:var(--grey); text-transform:uppercase; letter-spacing:1px; }
+  nav { display:flex; gap:2px; }
+  nav a { color:var(--grey); text-decoration:none; font-size:12px; font-weight:500; padding:5px 10px; border-radius:3px; transition:all 0.2s; }
+  nav a:hover { background:var(--navy-light); color:var(--accent-bright); }
+  .hero { background:linear-gradient(135deg,var(--navy-mid),#1a1030 60%,#1e2a35); padding:52px 32px 44px; border-bottom:2px solid var(--navy-light); position:relative; overflow:hidden; }
+  .hero::before { content:''; position:absolute; inset:0; background:repeating-linear-gradient(-45deg,transparent,transparent 8px,rgba(125,60,152,0.05) 8px,rgba(125,60,152,0.05) 9px); pointer-events:none; }
+  .hero-inner { max-width:1200px; margin:0 auto; position:relative; }
+  .hero-eyebrow { font-family:'Barlow Condensed',sans-serif; font-weight:600; font-size:12px; letter-spacing:3px; text-transform:uppercase; color:var(--accent-bright); margin-bottom:10px; }
+  .hero h1 { font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:clamp(34px,5vw,56px); line-height:1; margin-bottom:12px; }
+  .hero h1 span { color:var(--accent-bright); }
+  .hero-desc { color:#a8bcce; font-size:15px; font-weight:300; max-width:620px; margin-bottom:28px; line-height:1.7; }
+  .hero-stats { display:flex; gap:28px; flex-wrap:wrap; }
+  .stat { display:flex; flex-direction:column; border-left:3px solid var(--accent-bright); padding-left:12px; }
+  .stat-n { font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:30px; color:var(--accent-bright); line-height:1; }
+  .stat-l { font-size:11px; font-weight:500; color:var(--grey); text-transform:uppercase; letter-spacing:1px; }
+  .main { max-width:1200px; margin:0 auto; padding:0 32px 64px; }
+  section { margin-top:52px; }
+  .section-header { display:flex; align-items:center; gap:14px; margin-bottom:22px; padding-bottom:12px; border-bottom:1px solid var(--navy-light); }
+  .section-num { font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:42px; color:var(--navy-light); line-height:1; min-width:50px; }
+  .section-tag { font-size:11px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--accent-bright); margin-bottom:3px; }
+  .section-title { font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:25px; color:var(--white); line-height:1; }
+  .section-tag.enrich { color:#a569bd; }
+  .section-header.enrich { border-bottom-color:var(--accent); }
+  .alert { border-radius:4px; padding:14px 18px; margin-bottom:18px; display:flex; gap:12px; align-items:flex-start; border-left:4px solid; }
+  .alert-icon { font-size:18px; flex-shrink:0; margin-top:2px; }
+  .alert-title { font-weight:600; font-size:13px; margin-bottom:3px; }
+  .alert-text { font-size:13px; line-height:1.5; color:#c5d3de; }
+  .alert.danger { background:rgba(192,57,43,0.15); border-color:var(--red); }
+  .alert.danger .alert-title { color:var(--red-bright); }
+  .alert.warning { background:rgba(230,126,34,0.12); border-color:var(--warn); }
+  .alert.warning .alert-title { color:var(--warn); }
+  .alert.info { background:var(--accent-pale); border-color:var(--accent); }
+  .alert.info .alert-title { color:var(--accent-bright); }
+  .alert.online { background:rgba(36,113,163,0.15); border-color:var(--online); }
+  .alert.online .alert-title { color:var(--online-bright); }
+  .alert.enrich { background:rgba(125,60,152,0.12); border-color:var(--accent); }
+  .alert.enrich .alert-title { color:var(--accent-bright); }
+  .sow-table { width:100%; border-collapse:collapse; font-size:12px; }
+  .sow-table th { background:var(--navy-light); color:var(--accent-bright); font-family:'Barlow Condensed',sans-serif; font-weight:600; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; padding:9px 12px; text-align:left; border-bottom:2px solid var(--accent); }
+  .sow-table td { padding:9px 12px; border-bottom:1px solid var(--navy-light); vertical-align:top; color:#c5d3de; line-height:1.5; }
+  .sow-table tr:hover td { background:rgba(255,255,255,0.02); }
+  .sow-table td:first-child { font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:13px; color:var(--gold); white-space:nowrap; }
+  .sow-table tr.online-row td { background:rgba(36,113,163,0.08); }
+  .unit-code { display:inline-block; background:var(--navy-light); border-radius:3px; font-size:10px; font-weight:600; font-family:'Barlow Condensed',sans-serif; letter-spacing:1px; padding:2px 6px; color:var(--grey); }
+  .tag { display:inline-block; border-radius:3px; font-size:10px; font-weight:600; padding:2px 7px; margin:1px 1px 1px 0; }
+  .tag-obs { background:rgba(39,174,96,0.2); color:#6ee0a0; }
+  .tag-saq { background:rgba(125,60,152,0.25); color:#c39bd3; }
+  .tag-online { background:rgba(36,113,163,0.3); color:var(--online-bright); }
+  .tag-warn { background:rgba(230,126,34,0.2); color:#f0b27a; }
+  .two-col { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+  @media(max-width:768px) { .two-col { grid-template-columns:1fr; } }
+  .panel { background:var(--navy-mid); border:1px solid var(--navy-light); border-radius:6px; padding:20px; }
+  .panel-title { font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:18px; color:var(--white); margin-bottom:14px; padding-bottom:8px; border-bottom:1px solid var(--navy-light); }
+  .checklist { list-style:none; }
+  .checklist li { display:flex; gap:10px; align-items:flex-start; padding:9px 0; border-bottom:1px solid rgba(255,255,255,0.05); font-size:13px; color:#c5d3de; }
+  .checklist li:last-child { border-bottom:none; }
+  .check-box { width:16px; height:16px; border:2px solid var(--navy-light); border-radius:3px; flex-shrink:0; margin-top:3px; }
+  .step-n { font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:17px; color:var(--accent-bright); min-width:22px; flex-shrink:0; line-height:1; margin-top:1px; }
+  .step-title { font-weight:600; color:var(--white); margin-bottom:2px; font-size:13px; }
+  .step-detail { font-size:12px; color:var(--grey); line-height:1.5; }
+  .timeline { position:relative; padding-left:28px; }
+  .timeline::before { content:''; position:absolute; left:7px; top:0; bottom:0; width:2px; background:var(--navy-light); }
+  .tl-item { position:relative; margin-bottom:20px; }
+  .tl-item::before { content:''; position:absolute; left:-25px; top:6px; width:10px; height:10px; border-radius:50%; background:var(--accent-bright); border:2px solid var(--navy); }
+  .tl-item.key::before { background:var(--gold); }
+  .tl-item.hard::before { background:var(--red-bright); }
+  .tl-item.enrichment::before { background:var(--accent-bright); }
+  .tl-week { font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:12px; letter-spacing:2px; text-transform:uppercase; color:var(--gold); margin-bottom:3px; }
+  .tl-week.enrich { color:var(--accent-bright); }
+  .tl-title { font-weight:600; font-size:14px; color:var(--white); margin-bottom:3px; }
+  .tl-detail { font-size:12px; color:var(--grey); line-height:1.5; }
+  .deadline-strip { background:linear-gradient(90deg,rgba(192,57,43,0.3) 0%,transparent 100%); border-left:4px solid var(--red); padding:10px 14px; border-radius:0 4px 4px 0; margin-bottom:10px; }
+  .deadline-label { font-size:10px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--red-bright); margin-bottom:3px; }
+  .deadline-text { font-size:13px; color:var(--white); font-weight:500; }
+  .enrich-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:16px; }
+  .enrich-card { background:var(--navy-mid); border:1px solid var(--accent); border-top:3px solid var(--accent-bright); border-radius:6px; padding:18px; transition:border-color 0.2s; }
+  .enrich-card:hover { border-color:var(--accent-bright); }
+  .enrich-month { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--accent-bright); margin-bottom:6px; }
+  .enrich-title { font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:19px; color:var(--white); margin-bottom:6px; }
+  .enrich-text { font-size:13px; color:var(--grey); line-height:1.6; }
+  .enrich-tags { margin-top:10px; display:flex; flex-wrap:wrap; gap:4px; }
+  .etag { display:inline-block; background:rgba(125,60,152,0.25); color:var(--accent-bright); border-radius:3px; font-size:10px; font-weight:600; padding:2px 7px; }
+  .resources { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:14px; }
+  .resource-card { background:var(--navy-mid); border:1px solid var(--navy-light); border-radius:6px; overflow:hidden; transition:border-color 0.2s,transform 0.15s; }
+  .resource-card:hover { border-color:var(--accent-bright); transform:translateY(-2px); }
+  .resource-header { padding:10px 14px; background:var(--navy-light); display:flex; align-items:center; gap:8px; }
+  .resource-icon { font-size:18px; }
+  .resource-type { font-size:10px; font-weight:600; letter-spacing:1.5px; text-transform:uppercase; color:var(--grey); }
+  .resource-body { padding:12px 14px; }
+  .resource-title { font-weight:600; font-size:14px; color:var(--white); margin-bottom:5px; line-height:1.3; }
+  .resource-desc { font-size:12px; color:var(--grey); line-height:1.5; margin-bottom:8px; }
+  .resource-link { display:inline-flex; align-items:center; gap:5px; font-size:12px; font-weight:600; color:var(--gold); text-decoration:none; }
+  .resource-link:hover { color:var(--gold-light); }
+  footer { background:var(--navy-mid); border-top:2px solid var(--navy-light); padding:24px 32px; text-align:center; color:var(--grey); font-size:12px; margin-top:64px; }
+  footer a { color:var(--accent-bright); text-decoration:none; }
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="hb">
+      <a class="back-link" href="index.html">← All Playbooks</a>
+      <div class="level-badge">L2</div>
+      <div>
+        <div class="brand-title">Light Vehicle Maintenance and Repair Principles</div>
+        <div class="brand-sub">City & Guilds 7290-12/17 — Staff Delivery Playbook 2025–26</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#overview">Overview</a>
+      <a href="#sow">Scheme of Work</a>
+      <a href="#process">Process</a>
+      <a href="#resources">Resources</a>
+      <a href="#deadlines">Deadlines</a>
+      <a href="#enrichment">Enrichment</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">East Surrey College — Motor Vehicle & Motorsport</div>
+    <h1>Level 2 <span>Playbook</span></h1>
+    <p class="hero-desc">City & Guilds 7290-12/17 Diploma/Certificate in Light Vehicle Maintenance and Repair Principles. Units 001, 004, 051, 053, 054, 101, 151, 105, 155 + optional 602. All assessment complete by mid-February — Evolve tests booked by December.</p>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-n">10</div><div class="stat-l">Units Total</div></div>
+      <div class="stat"><div class="stat-n">2</div><div class="stat-l">Evolve Online Tests</div></div>
+      <div class="stat"><div class="stat-n">13 Feb</div><div class="stat-l">Hard Deadline</div></div>
+      <div class="stat"><div class="stat-n">Mar–Jun</div><div class="stat-l">Enrichment</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+
+  <section id="overview">
+    <div class="section-header">
+      <div class="section-num">01</div>
+      <div class="section-title-group">
+        <div class="section-tag">Overview</div>
+        <div class="section-title">10 Units — 3 Evidence Types — One Deadline</div>
+      </div>
+    </div>
+    <div class="alert danger">
+      <div class="alert-icon">⚠️</div>
+      <div class="alert-body">
+        <div class="alert-title">All units assessed and IQA-ready by 13 February 2026. Non-negotiable.</div>
+        <div class="alert-text">This qualification has taken too long to deliver in previous years. The scheme below is built backwards from mid-February. There is no flexibility in this timeline — if a unit looks like it will slip its target date, escalate to the Coordinator immediately, not at the next team meeting.</div>
+      </div>
+    </div>
+    <div class="alert online">
+      <div class="alert-icon">🖥</div>
+      <div class="alert-body">
+        <div class="alert-title">Units 151 and 155 — Evolve Online Tests — Book by December</div>
+        <div class="alert-text">Units 151 and 155 are assessed by online multiple-choice test via City & Guilds Evolve only — there is no observation form or SAQ pack. Tests must be booked via Walled Garden as soon as taught content is complete. The timeline targets unit 151 booked by end of November, sat in January; unit 155 booked by end of January, sat in February. Tests must be sat under JCQ invigilated conditions within the candidate's registration period — if registration lapses before the test is sat, the unit cannot be achieved.</div>
+      </div>
+    </div>
+    <div class="alert warning">
+      <div class="alert-icon">📋</div>
+      <div class="alert-body">
+        <div class="alert-title">Unit 602 — Optional Unit — Obtain Documentation First</div>
+        <div class="alert-text">Unit 602 is not included in the standard assessment pack (7290-12/17 V1.0). Obtain documentation from City & Guilds via Walled Garden or your EQA before beginning delivery. Confirm rules of combination for your cohort with the Coordinator before deciding whether to offer this unit.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sow">
+    <div class="section-header">
+      <div class="section-num">02</div>
+      <div class="section-title-group">
+        <div class="section-tag">Scheme of Work</div>
+        <div class="section-title">September 2025 → February 2026</div>
+      </div>
+    </div>
+    <div style="overflow-x:auto;">
+    <table class="sow-table">
+      <thead>
+        <tr><th>Phase / Dates</th><th>Unit</th><th>Title</th><th>Type</th><th>Key Assessment Tasks</th><th>Critical Requirements</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Phase 1<br>8–19 Sep</td>
+          <td><span class="unit-code">7290-001</span></td>
+          <td>Skills in H&S and Good Housekeeping</td>
+          <td><span class="tag tag-obs">Obs</span><span class="tag tag-saq">SAQ</span></td>
+          <td>Risk assessment of work area. Correct PPE. Set up and check workshop equipment. Tool checking across all 5 categories (hand, hydraulic, electronic, pneumatic, mechanical) — circle tools used on form. Workshop policies evidenced. SAQ: name 7 items with risks and maintenance checks; identify hazards from oil spill, broken tools, damaged cables.</td>
+          <td>Both observation AND SAQ required. Circle tools used on form.</td>
+        </tr>
+        <tr>
+          <td>Phase 1<br>22 Sep–3 Oct</td>
+          <td><span class="unit-code">7290-051</span></td>
+          <td>Knowledge of H&S</td>
+          <td><span class="tag tag-saq">SAQ only</span></td>
+          <td>Housekeeping section: 6 tools with checks/cleaning, opening/closing routines, waste/recycling policy (metal, cardboard, oils, plastics), COSHH labels, 3 rules. H&S section: hazards, controls, fire extinguisher classes, PPE, HASAWA.</td>
+          <td>HASAWA statement MUST be read aloud to candidate before H&S section. Written/oral tick box required.</td>
+        </tr>
+        <tr>
+          <td>Phase 2<br>6–17 Oct</td>
+          <td><span class="unit-code">7290-053</span></td>
+          <td>Knowledge of Job Roles</td>
+          <td><span class="tag tag-saq">SAQ only — 16 Qs</span></td>
+          <td>16 questions: departmental structures, communication, responsibility levels, information sources, legal requirements, identification codes, record keeping, timescales, working relationships.</td>
+          <td>All 16 questions must be answered. Written/oral tick box required.</td>
+        </tr>
+        <tr>
+          <td>Phase 2<br>20–31 Oct</td>
+          <td><span class="unit-code">7290-004</span></td>
+          <td>Skills in Materials, Fabrication, Tools and Measuring</td>
+          <td><span class="tag tag-obs">Obs only</span></td>
+          <td>Make 1 engineering tool to Diagram 1 or Diagram 2 from the assessment pack — no other diagram is acceptable. Correct use of hacksaw, files, taps/dies, drills, measuring instruments. Repair electrical terminals, hoses, studs. H&S and housekeeping throughout.</td>
+          <td>Diagram 1 or 2 from pack ONLY. Photograph the finished tool and attach to form. Use supplementary oral questions.</td>
+        </tr>
+        <tr>
+          <td>Phase 2<br>3–14 Nov</td>
+          <td><span class="unit-code">7290-054</span></td>
+          <td>Knowledge of Materials, Fabrication, Tools and Measuring</td>
+          <td><span class="tag tag-saq">SAQ only — 5 sections</span></td>
+          <td>S1: Hand tool identification (image-based — screwdriver types, spanners, files, taps/dies). S2: Measuring devices (vernier, micrometer, multimeter, Ohm's law diagram, torque wrench). S3: Ferrous/non-ferrous metals. S4: Non-metallic materials (GRP, carbon fibre, rubber, Kevlar). S5: Material properties (hardness, malleability, ductility, elasticity, toughness).</td>
+          <td>Image-based questions — candidates label diagrams. All 5 sections must be completed. Written/oral tick box required.</td>
+        </tr>
+        <tr>
+          <td>Phase 3<br>17–28 Nov</td>
+          <td><span class="unit-code">7290-101</span></td>
+          <td>Skills in Routine Light Vehicle Maintenance</td>
+          <td><span class="tag tag-obs">Obs only</span></td>
+          <td>Full routine service: oil drain and refill (correct grade, sump nut torque), battery voltage, antifreeze test, diagnostic code reader, wheel nut torque, cam belt mileage check, brake pad thickness, HC and CO emissions, MOT standard compliance. Service checklist completed. All readings attached to form.</td>
+          <td>Vehicle info (make/model, reg, VIN) completed BEFORE starting. All readings physically attached to form. No SAQ — use supplementary oral questions.</td>
+        </tr>
+        <tr class="online-row">
+          <td>Book: Nov<br>Sit: Jan</td>
+          <td><span class="unit-code">7290-151</span></td>
+          <td>Knowledge of Routine Maintenance</td>
+          <td><span class="tag tag-online">Evolve MCQ</span></td>
+          <td>Online multiple-choice test only. No observation form or SAQ. Book via Walled Garden as soon as unit 101 teaching is complete. Must be sat under JCQ invigilated conditions.</td>
+          <td>Book by end of November. Sit in first two weeks of January. Must be within registration period.</td>
+        </tr>
+        <tr>
+          <td>Phase 4<br>5–16 Jan</td>
+          <td><span class="unit-code">7290-105</span></td>
+          <td>Skills in Inspecting Light Vehicles (Pre-MOT)</td>
+          <td><span class="tag tag-obs">Obs only</span></td>
+          <td>Full Pre-MOT/DVSA inspection: complete MOT checklist, exhaust gas analysis (CO%, HC ppm), headlamp alignment, all 4 tyre depths, foot brake efficiency, handbrake efficiency. Roller brake test or decelerometer. At least 1 inspection directly observed by assessor. All readings attached.</td>
+          <td>Vehicle info completed BEFORE starting. All emission, tyre, and brake readings attached to form. No SAQ — use supplementary oral questions.</td>
+        </tr>
+        <tr class="online-row">
+          <td>Book: Jan<br>Sit: Feb</td>
+          <td><span class="unit-code">7290-155</span></td>
+          <td>Knowledge of Vehicle Inspection</td>
+          <td><span class="tag tag-online">Evolve MCQ</span></td>
+          <td>Online multiple-choice test only. No observation form or SAQ. Book via Walled Garden as soon as unit 105 teaching is complete.</td>
+          <td>Book end of January. Sit by 13 February. Must be within registration period.</td>
+        </tr>
+        <tr>
+          <td>If applicable<br>Jan–Feb</td>
+          <td><span class="unit-code">7290-602</span></td>
+          <td>Optional Unit</td>
+          <td><span class="tag tag-warn">See note</span></td>
+          <td>Assessment materials not in standard pack. Obtain from City & Guilds via Walled Garden or EQA before delivery. Confirm rules of combination with Coordinator.</td>
+          <td>Do not begin without correct documentation and rules of combination confirmed.</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </section>
+
+  <section id="process">
+    <div class="section-header">
+      <div class="section-num">03</div>
+      <div class="section-title-group">
+        <div class="section-tag">Assessment Process</div>
+        <div class="section-title">Steps to Follow — Every Unit, Every Learner</div>
+      </div>
+    </div>
+    <div class="two-col">
+      <div class="panel">
+        <div class="panel-title">📋 Before Every Assessment</div>
+        <ol class="checklist">
+          <li><div class="step-n">1</div><div><div class="step-title">Confirm Registration</div><div class="step-detail">Verify on Walled Garden before every unit — not just at the start of year. Check Diploma (7290-12) vs Certificate (7290-17) route for each learner.</div></div></li>
+          <li><div class="step-n">2</div><div><div class="step-title">Print the Correct Forms</div><div class="step-detail">Print the specific recording form for that unit. For 151 and 155: no form — book the Evolve test. Have forms ready before the session.</div></div></li>
+          <li><div class="step-n">3</div><div><div class="step-title">Brief the Candidate on Criteria</div><div class="step-detail">Read out the assessment criteria before the task begins. This is a City & Guilds requirement. For 051 — read the HASAWA statement before the H&S section.</div></div></li>
+          <li><div class="step-n">4</div><div><div class="step-title">Complete Vehicle Information First (101, 105)</div><div class="step-detail">Vehicle make/model, registration, and VIN recorded before any practical work begins. Forms without this are rejected.</div></div></li>
+        </ol>
+      </div>
+      <div class="panel">
+        <div class="panel-title">🔧 During and After</div>
+        <ol class="checklist">
+          <li><div class="step-n">1</div><div><div class="step-title">Observe — Do Not Assist</div><div class="step-detail">No guidance or correction during assessment. Any assistance given must be noted. Safety risk: stop task, record as resubmission.</div></div></li>
+          <li><div class="step-n">2</div><div><div class="step-title">Specific Comments and All Readings Attached</div><div class="step-detail">Name what the learner did. Record all numerical readings (voltages, emissions, torques, tyre depths) on or attached to the form. No blank feedback boxes.</div></div></li>
+          <li><div class="step-n">3</div><div><div class="step-title">Use Supplementary Oral Questions (Obs-Only Units)</div><div class="step-detail">For units 004, 101, 105 — ask relevant questions from the 10 supplementary knowledge questions. Record question number and verbatim response on form.</div></div></li>
+          <li><div class="step-n">4</div><div><div class="step-title">Sign, File, Submit to IQA Within One Week</div><div class="step-detail">Both sign every page on the day. Evidence into portfolio same day. IQA submission within one week. Never batch.</div></div></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section id="resources">
+    <div class="section-header">
+      <div class="section-num">04</div>
+      <div class="section-title-group">
+        <div class="section-tag">Teaching Resources</div>
+        <div class="section-title">Vetted Materials by Unit</div>
+      </div>
+    </div>
+    <div class="resources">
+      <div class="resource-card"><div class="resource-header"><div class="resource-icon">💻</div><div class="resource-type">Interactive — ESC Internal</div></div><div class="resource-body"><div class="resource-title">ESC Motor Vehicle Learning Suite</div><div class="resource-desc">Interactive HTML activities for all major L2 topic areas. No login. Use before every technical practical.</div><a class="resource-link" href="https://laurencesait.github.io" target="_blank">laurencesait.github.io →</a></div></div>
+      <div class="resource-card"><div class="resource-header"><div class="resource-icon">🌐</div><div class="resource-type">Awarding Body</div></div><div class="resource-body"><div class="resource-title">City & Guilds — Walled Garden</div><div class="resource-desc">Book Evolve tests for 151 and 155 here. Learner registration. Qualification specifications. Staff must have read the spec before assessing each unit.</div><a class="resource-link" href="https://www.walled-garden.com" target="_blank">walled-garden.com →</a></div></div>
+      <div class="resource-card"><div class="resource-header"><div class="resource-icon">🌐</div><div class="resource-type">H&S — Units 001 & 051</div></div><div class="resource-body"><div class="resource-title">HSE — Health and Safety Executive</div><div class="resource-desc">COSHH datasheets, RIDDOR, risk assessment templates. Source COSHH sheets for all chemicals in workshop use.</div><a class="resource-link" href="https://www.hse.gov.uk" target="_blank">hse.gov.uk →</a></div></div>
+      <div class="resource-card"><div class="resource-header"><div class="resource-icon">🎬</div><div class="resource-type">Video — Routine Service (101)</div></div><div class="resource-body"><div class="resource-title">Full Service Walkthrough — AutoDoc</div><div class="resource-desc">Step-by-step routine service procedure. Use to prepare learners for unit 101 before assessment. Helps them understand correct sequence.</div><a class="resource-link" href="https://www.youtube.com/@AUTODOC_EN" target="_blank">▶ AutoDoc YouTube →</a></div></div>
+      <div class="resource-card"><div class="resource-header"><div class="resource-icon">🎬</div><div class="resource-type">Video — Pre-MOT Inspection (105)</div></div><div class="resource-body"><div class="resource-title">Pre-MOT Inspection Walkthrough</div><div class="resource-desc">DVSA-aligned walkthroughs available from IMI and independent garages. Search "pre-MOT inspection walkthrough UK" for current options.</div><a class="resource-link" href="https://www.youtube.com/results?search_query=pre-MOT+inspection+UK+walkthrough" target="_blank">▶ Search YouTube →</a></div></div>
+      <div class="resource-card"><div class="resource-header"><div class="resource-icon">📄</div><div class="resource-type">Reference — Tools (054)</div></div><div class="resource-body"><div class="resource-title">Snap-on Tool Catalogue</div><div class="resource-desc">Tool identification for unit 054 preparation. Learners identify file types, screwdriver types, spanners, measuring tools before the SAQ image-based questions.</div><a class="resource-link" href="https://www.snapon.com/en-GB" target="_blank">snapon.com →</a></div></div>
+      <div class="resource-card"><div class="resource-header"><div class="resource-icon">📄</div><div class="resource-type">Technical Manuals (101 & 105)</div></div><div class="resource-body"><div class="resource-title">Haynes Online</div><div class="resource-desc">Manufacturer-specific data: oil grade and capacity, sump nut torque, coolant specs, wheel nut torques. Essential for units requiring technical specifications. Centre subscription recommended.</div><a class="resource-link" href="https://www.haynes.com/en-gb" target="_blank">haynes.com →</a></div></div>
+      <div class="resource-card"><div class="resource-header"><div class="resource-icon">🌐</div><div class="resource-type">IMI Resources</div></div><div class="resource-body"><div class="resource-title">Institute of the Motor Industry</div><div class="resource-desc">Sector eLearning aligned to City & Guilds units. Particularly useful pre-teaching for units 053 (job roles) and 054 (materials). Free learner enrolment.</div><a class="resource-link" href="https://www.theimi.org.uk" target="_blank">theimi.org.uk →</a></div></div>
+    </div>
+  </section>
+
+  <section id="deadlines">
+    <div class="section-header">
+      <div class="section-num">05</div>
+      <div class="section-title-group">
+        <div class="section-tag">Deadlines</div>
+        <div class="section-title">Internal Timeline — September 2025 to June 2026</div>
+      </div>
+    </div>
+    <div class="two-col">
+      <div class="panel">
+        <div class="panel-title">🗓 Qualification Phase — Sept → Feb</div>
+        <div class="timeline">
+          <div class="tl-item key"><div class="tl-week">1 September 2025</div><div class="tl-title">All Learners Registered — Route Confirmed</div><div class="tl-detail">Diploma (7290-12) or Certificate (7290-17) confirmed per learner. Coordinator signs off registration before Week 1.</div></div>
+          <div class="tl-item"><div class="tl-week">Weeks 1–2 — 8 Sep</div><div class="tl-title">Units 001 and 051 Delivered and Assessed</div><div class="tl-detail">H&S observation and SAQ complete. Signed, filed, IQA-submitted within one week of sign-off.</div></div>
+          <div class="tl-item"><div class="tl-week">Weeks 3–4 — Oct</div><div class="tl-title">Unit 053 — Job Roles SAQ Complete</div><div class="tl-detail">All 16 questions answered and recorded.</div></div>
+          <div class="tl-item"><div class="tl-week">Weeks 5–6 — Oct</div><div class="tl-title">Unit 004 — Fabrication Observation Complete</div><div class="tl-detail">Tool made to Diagram 1 or 2. Photographed and form filed.</div></div>
+          <div class="tl-item"><div class="tl-week">Weeks 7–8 — Nov</div><div class="tl-title">Unit 054 — Materials SAQ Complete</div><div class="tl-detail">All 5 sections answered. Image questions completed on form.</div></div>
+          <div class="tl-item key"><div class="tl-week">Weeks 9–10 — Nov</div><div class="tl-title">Unit 101 — Routine Service Observation Complete + 151 Booked</div><div class="tl-detail">Service complete, readings attached, filed. Book the 151 Evolve test by end of November — not in December, not in January.</div></div>
+          <div class="tl-item"><div class="tl-week">Dec — End of Term</div><div class="tl-title">IQA Interim Sampling Check</div><div class="tl-detail">Units 001, 051, 053, 004, 054, 101 all IQA-submitted. No unit outstanding going into Christmas. IQA to confirm sampling status.</div></div>
+          <div class="tl-item key"><div class="tl-week">January — Week 2</div><div class="tl-title">Unit 151 Evolve Test Sat</div><div class="tl-detail">Online MCQ under invigilated conditions. Result recorded via Walled Garden. File confirmation in portfolio immediately.</div></div>
+          <div class="tl-item"><div class="tl-week">January — Weeks 3–4</div><div class="tl-title">Unit 105 — Pre-MOT Inspection Observation Complete</div><div class="tl-detail">All emission, brake, tyre, and headlamp readings recorded and attached. Vehicle info completed first. Book 155 Evolve test by end of January.</div></div>
+          <div class="tl-item key"><div class="tl-week">February — Week 1</div><div class="tl-title">Unit 155 Evolve Test Sat + Unit 602 (if applicable)</div><div class="tl-detail">155 online test completed. Optional unit 602 assessed if applicable — documentation obtained in advance.</div></div>
+          <div class="tl-item hard"><div class="tl-week">13 February 2026 — HARD DEADLINE</div><div class="tl-title">ALL 10 UNITS COMPLETE — IQA QUEUE CLOSED</div><div class="tl-detail">Every unit assessed, every form signed, every portfolio in IQA queue. No exceptions. IQA sign-off begins 14 February.</div></div>
+          <div class="tl-item"><div class="tl-week">End of March 2026</div><div class="tl-title">IQA Sign-Off Complete</div><div class="tl-detail">All portfolios sampled and approved.</div></div>
+          <div class="tl-item key"><div class="tl-week">End of April 2026</div><div class="tl-title">Results Claim Submitted to City & Guilds</div><div class="tl-detail">Coordinator submits via Walled Garden. Certificates within 4–6 weeks.</div></div>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-title">🚨 Escalate to Coordinator — Same Day</div>
+        <div class="deadline-strip"><div class="deadline-label">Escalate Immediately</div><div class="deadline-text">Any unit looking likely to miss its target week</div></div>
+        <div class="deadline-strip"><div class="deadline-label">Escalate Immediately</div><div class="deadline-text">Evolve test for 151 or 155 not booked on schedule</div></div>
+        <div class="deadline-strip"><div class="deadline-label">Escalate Immediately</div><div class="deadline-text">Learner registration period at risk of lapsing</div></div>
+        <div class="deadline-strip"><div class="deadline-label">Escalate Immediately</div><div class="deadline-text">Suspected collusion in SAQ responses</div></div>
+        <div class="deadline-strip"><div class="deadline-label">Escalate Immediately</div><div class="deadline-text">A learner fails to attend a scheduled assessment</div></div>
+        <div class="deadline-strip"><div class="deadline-label">Escalate Immediately</div><div class="deadline-text">Evidence is lost, damaged or cannot be located</div></div>
+        <div class="deadline-strip"><div class="deadline-label">Escalate Immediately</div><div class="deadline-text">IQA flags a serious quality concern</div></div>
+        <div class="deadline-strip"><div class="deadline-label">Escalate Immediately</div><div class="deadline-text">Unsafe act during a practical assessment — task stopped</div></div>
+        <div style="margin-top:20px;">
+          <div class="panel-title" style="font-size:16px;">📞 Key Contacts</div>
+          <div style="display:grid;grid-template-columns:auto 1fr;gap:7px 14px;font-size:12px;color:#c5d3de;align-items:start;margin-top:8px;">
+            <div style="color:var(--gold);font-weight:600;">Coordinator</div><div>Motor Vehicle & Motorsport — ESC</div>
+            <div style="color:var(--gold);font-weight:600;">IQA</div><div>Internal Quality Assurer — confirm name with Coordinator</div>
+            <div style="color:var(--gold);font-weight:600;">Walled Garden</div><div><a href="https://www.walled-garden.com" target="_blank" style="color:var(--online-bright);text-decoration:none;">walled-garden.com</a> — registration and Evolve booking</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="enrichment">
+    <div class="section-header enrich">
+      <div class="section-num">06</div>
+      <div class="section-title-group">
+        <div class="section-tag enrich">Post-Qualification Enrichment</div>
+        <div class="section-title">March → June 2026 — Advanced Technical Programme</div>
+      </div>
+    </div>
+    <div class="alert enrich">
+      <div class="alert-icon">🔧</div>
+      <div class="alert-body">
+        <div class="alert-title">Purpose of this programme</div>
+        <div class="alert-text">Having completed the L2 qualification by mid-February, learners have 16 weeks of full workshop time remaining. This programme moves beyond the qualification into genuinely advanced workshop skills — the kind that make learners competitive for Level 3 progression, apprenticeships, and employer selection. All sessions are practical and workshop-based. No additional City & Guilds assessment required.</div>
+      </div>
+    </div>
+    <div class="enrich-grid">
+      <div class="enrich-card">
+        <div class="enrich-month">March 2026 — Weeks 1–4</div>
+        <div class="enrich-title">Advanced Diagnostics and Fault Finding</div>
+        <div class="enrich-text">Move beyond basic code reading into live data analysis. Learners use a professional-grade scan tool (Snap-on, Autel or similar) to analyse multiple PIDs simultaneously on a running engine — coolant temp, IAT, MAF, O2 sensors, short/long term fuel trims, injector pulse width. Introduce freeze frame data analysis. Seed faults into workshop vehicles and challenge learners to diagnose without being told the fault. Introduce oscilloscope basics: reading a crank sensor waveform and an injector waveform.</div>
+        <div class="enrich-tags"><span class="etag">Advanced Diagnostics</span><span class="etag">Live Data</span><span class="etag">Oscilloscope</span><span class="etag">Fault Finding</span></div>
+      </div>
+      <div class="enrich-card">
+        <div class="enrich-month">April 2026 — Weeks 5–7</div>
+        <div class="enrich-title">Engine Management and Fuel Systems</div>
+        <div class="enrich-text">Deep dive into the engine management system: ECU inputs and outputs, sensor types (NTC thermistor, potentiometer, Hall effect), actuators (injectors, idle control valve, EGR). Learners use a multimeter and oscilloscope to test sensors on a live or bench engine. Introduce lambda (O2) sensor operation and how fuel trim values reveal mixture problems. Cover direct injection vs port injection differences. Link back to the emissions readings from unit 101 — why do they read what they do?</div>
+        <div class="enrich-tags"><span class="etag">Engine Management</span><span class="etag">Sensors</span><span class="etag">Fuel Trim</span><span class="etag">Lambda</span></div>
+      </div>
+      <div class="enrich-card">
+        <div class="enrich-month">April/May 2026 — Weeks 8–10</div>
+        <div class="enrich-title">Chassis, Geometry and Wheel Alignment</div>
+        <div class="enrich-text">Introduce four-wheel alignment principles: camber, caster, toe, thrust angle. Use the workshop alignment equipment (or a digital gauge and string line if full equipment unavailable) to measure and record geometry on a workshop vehicle. Learners identify and diagnose common geometry faults from tyre wear patterns. Cover front suspension overhaul in full: strut removal and replacement, top mount bearing, spring compressor safety. Extend into rear beam/multi-link suspension identification and inspection.</div>
+        <div class="enrich-tags"><span class="etag">4-Wheel Alignment</span><span class="etag">Geometry</span><span class="etag">Suspension Overhaul</span><span class="etag">Tyre Wear Diagnosis</span></div>
+      </div>
+      <div class="enrich-card">
+        <div class="enrich-month">May 2026 — Weeks 11–12</div>
+        <div class="enrich-title">Electric and Hybrid Vehicle Technology</div>
+        <div class="enrich-text">Go beyond awareness into technical understanding. Cover HV battery chemistry (NMC, LFP), cell balancing, BMS operation, state of charge vs state of health. Introduce the inverter and motor controller — how DC becomes AC to drive the motor. Regenerative braking — how the system decides blend between friction and regen. Cover charging standards: Type 1/2, CCS, CHAdeMO, rapid vs slow charging rates. Safe isolation procedure in full — PPE, isolation point, discharge verification. This directly prepares learners for L3 EV units.</div>
+        <div class="enrich-tags"><span class="etag">HV Battery</span><span class="etag">BMS</span><span class="etag">Inverter</span><span class="etag">Safe Isolation</span><span class="etag">L3 Preparation</span></div>
+      </div>
+      <div class="enrich-card">
+        <div class="enrich-month">May/June 2026 — Weeks 13–15</div>
+        <div class="enrich-title">Motorsport Engineering Project</div>
+        <div class="enrich-text">Applied project: learners work in pairs to prepare a workshop vehicle to a set of motorsport-style performance criteria — corner weights within tolerance, tyre pressures to a target, geometry within a specified range, brake balance checked, and all fluids to correct level and condition. Each pair produces a written job card (using motorsport-style documentation) and presents their findings. Optional: introduce data logging using a basic GPS lap timer or accelerometer — what does the data tell you about the vehicle's performance?</div>
+        <div class="enrich-tags"><span class="etag">Motorsport Project</span><span class="etag">Corner Weights</span><span class="etag">Data Logging</span><span class="etag">Job Cards</span><span class="etag">Teamwork</span></div>
+      </div>
+      <div class="enrich-card">
+        <div class="enrich-month">June 2026 — Week 16</div>
+        <div class="enrich-title">Industry Readiness and L3 Transition</div>
+        <div class="enrich-text">Final week: each learner produces a one-page technical summary of one enrichment topic — aimed at a potential employer or L3 admissions tutor. Peer review session. One-to-one progression meeting: review L2 achievement, map to L3 unit content (which enrichment topics they've already covered), discuss apprenticeship routes and employer expectations. Industry employer or apprenticeship provider visit if achievable. Give learners a skills checklist to take with them — evidence of what they can do beyond the certificate.</div>
+        <div class="enrich-tags"><span class="etag">L3 Readiness</span><span class="etag">Employability</span><span class="etag">Apprenticeships</span><span class="etag">Skills Evidence</span></div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  East Surrey College — Motor Vehicle & Motorsport &nbsp;|&nbsp; Level 2 — City & Guilds 7290-12/17 V1.0 &nbsp;|&nbsp; 2025–26 &nbsp;|&nbsp; <a href="index.html">← Back to All Playbooks</a><br>
+  <span style="color:#3a4f62;font-size:11px;display:block;margin-top:6px;">Assessment pack content © City & Guilds 2022. For internal use only.</span>
+</footer>
+</body>
+</html>
