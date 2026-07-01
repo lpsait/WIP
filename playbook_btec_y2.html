@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BTEC L3 Motorsport Year 2 — F2MVRA Playbook 2026–27</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0d1b2a;--navy-mid:#1a2d42;--navy-light:#243b55;
+  --gold:#f39c12;--gold-light:#f9ca5a;--white:#f5f5f0;--grey:#8a9bb0;
+  --teal:#006272;--teal-light:#5dade2;--teal-pale:#0d3540;
+  --green:#1a5276;--green-light:#58d68d;--green-pale:#0d2510;
+  --red:#c0392b;--red-pale:#2a0a08;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Barlow',sans-serif;background:var(--navy);color:var(--white);min-height:100vh;}
+header{background:var(--navy-mid);border-bottom:4px solid #58d68d;padding:18px 36px;}
+.header-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.header-left{display:flex;align-items:center;gap:14px;}
+.esc-badge{background:#58d68d;color:var(--navy);font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:12px;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:3px;}
+.header-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:20px;}
+.header-sub{font-size:11px;color:var(--grey);text-transform:uppercase;letter-spacing:1px;}
+.back-link{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#58d68d;text-decoration:none;padding:6px 14px;border:1px solid #58d68d;border-radius:3px;transition:background 0.2s;}
+.back-link:hover{background:rgba(243,156,18,0.1);}
+.hero{max-width:1200px;margin:0 auto;padding:44px 36px 28px;}
+.hero-eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#58d68d;margin-bottom:10px;}
+.hero h1{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(34px,5vw,58px);line-height:1.0;margin-bottom:10px;}
+.hero h1 span{color:#58d68d;}
+.hero-sub{color:#a8bcce;font-size:14px;font-weight:300;max-width:700px;line-height:1.7;margin-bottom:24px;}
+.stats-row{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:32px;}
+.stat-pill{background:var(--navy-mid);border:1px solid var(--navy-light);border-radius:4px;padding:8px 16px;font-family:'Barlow Condensed',sans-serif;}
+.stat-val{font-size:22px;font-weight:900;color:#58d68d;display:block;line-height:1;}
+.stat-lbl{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--grey);display:block;}
+.content{max-width:1200px;margin:0 auto;padding:0 36px 60px;}
+/* Alert boxes */
+.alert{border-radius:6px;padding:14px 18px;margin-bottom:20px;font-size:13px;line-height:1.6;display:flex;gap:12px;align-items:flex-start;}
+.alert-icon{font-size:18px;flex-shrink:0;margin-top:1px;}
+.alert-red{background:var(--red-pale);border-left:4px solid var(--red);}
+.alert-teal{background:var(--teal-pale);border-left:4px solid var(--teal);}
+.alert-gold{background:rgba(243,156,18,0.08);border-left:4px solid var(--gold);}
+/* Section headings */
+.section-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:22px;color:#58d68d;text-transform:uppercase;letter-spacing:1px;margin:36px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--navy-light);display:flex;align-items:center;gap:10px;}
+.section-num{background:#58d68d;color:var(--navy);width:26px;height:26px;border-radius:50%;font-size:13px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+/* Tables */
+table{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:24px;}
+th{background:#0a2010;color:var(--white);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:1px;text-transform:uppercase;padding:10px 12px;text-align:left;}
+td{padding:9px 12px;border-bottom:1px solid var(--navy-light);vertical-align:top;line-height:1.5;}
+tr:nth-child(even) td{background:rgba(255,255,255,0.02);}
+tr:hover td{background:rgba(255,255,255,0.04);}
+.tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:2px 8px;border-radius:3px;margin-bottom:3px;}
+.tag-mand{background:rgba(243,156,18,0.2);color:var(--gold);}
+.tag-path{background:rgba(93,173,226,0.2);color:#5dade2;}
+.tag-opt{background:rgba(138,155,176,0.15);color:#8a9bb0;}
+.tag-pass{background:rgba(88,214,141,0.15);color:#58d68d;}
+.tag-merit{background:rgba(93,173,226,0.15);color:#5dade2;}
+.tag-dist{background:rgba(243,156,18,0.15);color:var(--gold);}
+/* Unit cards */
+.unit-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px;margin-bottom:24px;}
+.unit-card{background:var(--navy-mid);border:1px solid var(--navy-light);border-radius:6px;overflow:hidden;transition:border-color 0.2s;}
+.unit-card:hover{border-color:#58d68d;}
+.unit-card-top{height:4px;background:#58d68d;}
+.unit-card-body{padding:16px;}
+.unit-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:28px;color:#58d68d;line-height:1;}
+.unit-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;color:var(--white);margin:3px 0 6px;}
+.unit-glh{font-size:11px;color:var(--grey);margin-bottom:8px;}
+.unit-lo{font-size:12px;color:#8a9bb0;line-height:1.5;}
+.unit-dates{margin-top:10px;border-top:1px solid var(--navy-light);padding-top:10px;display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.unit-date-item{font-size:11px;}
+.unit-date-lbl{color:var(--grey);text-transform:uppercase;letter-spacing:0.5px;font-size:10px;}
+.unit-date-val{color:var(--white);font-weight:600;}
+/* Window badges */
+.window-strip{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px;}
+.window-card{background:var(--navy-mid);border:1px solid var(--navy-light);border-radius:6px;padding:14px 18px;flex:1;min-width:180px;}
+.window-label{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:13px;color:#58d68d;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;}
+.window-deadline{font-size:13px;font-weight:600;color:var(--white);margin-bottom:3px;}
+.window-units{font-size:11px;color:var(--grey);}
+/* Crit table special */
+.crit-p{color:#58d68d;}
+.crit-m{color:#5dade2;}
+.crit-d{color:var(--gold);}
+/* Week table */
+.wk-break td{background:rgba(255,255,255,0.04)!important;color:var(--grey);font-style:italic;}
+.wk-deadline td{background:rgba(192,57,43,0.08)!important;}
+.wk-deadline td:first-child{border-left:3px solid var(--red);}
+.wk-iv td{background:rgba(0,98,114,0.08)!important;}
+/* Footer */
+footer{border-top:1px solid var(--navy-light);margin-top:60px;padding:24px 36px;text-align:center;font-size:11px;color:var(--grey);}
+@media(max-width:700px){.hero{padding:28px 18px 18px;}.content{padding:0 18px 40px;}.stats-row{gap:7px;}.window-strip{flex-direction:column;}}
+</style>
+
+<style>:root{--accent:#58d68d;--accent-dark:#0a2010;}</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="header-left">
+      <div class="esc-badge" style="background:#58d68d;">BTEC</div>
+      <div>
+        <div class="header-title">L3 Motorsport Year 2 — F2MVRA — Extended Diploma</div>
+        <div class="header-sub">Continuing Cohort 2026–27 &nbsp;|&nbsp; Pearson 601/9060/7 &nbsp;|&nbsp; East Surrey College</div>
+      </div>
+    </div>
+    <a class="back-link" href="index.html">← All Playbooks</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-eyebrow">Pearson BTEC Level 3 — Motorsport Pathway</div>
+  <h1>BTEC L3<br><span>Extended Diploma</span><br>Year 2</h1>
+  <p class="hero-sub">Year 2 of the two-year BTEC Level 3 Motorsport pathway. Continuing cohort from Year 1. 8 units including Unit 4 Engineering Project (120 GLH) which runs the full academic year. All submissions before the May half term. Graded Pass, Merit or Distinction.</p>
+  <div class="stats-row">
+    <div class="stat-pill"><span class="stat-val">8</span><span class="stat-lbl">Units</span></div>
+    <div class="stat-pill"><span class="stat-val">540 GLH</span><span class="stat-lbl">Total</span></div>
+    <div class="stat-pill"><span class="stat-val">P/M/D</span><span class="stat-lbl">Grading</span></div>
+    <div class="stat-pill"><span class="stat-val">≥108 pts</span><span class="stat-lbl">Pass Threshold</span></div>
+    <div class="stat-pill"><span class="stat-val">≥156 pts</span><span class="stat-lbl">Merit Threshold</span></div>
+    <div class="stat-pill"><span class="stat-val">≥216 pts</span><span class="stat-lbl">Distinction Threshold</span></div>
+    <div class="stat-pill"><span class="stat-val">Unit 4 Report: 16 May</span><span class="stat-lbl">Project Deadline</span></div>
+    <div class="stat-pill"><span class="stat-val">31 May 2027</span><span class="stat-lbl">Last Submission</span></div>
+  </div>
+</div>
+
+<div class="content">
+
+<div class="alert alert-red">
+  <div class="alert-icon">⚠</div>
+  <div><strong>BTEC Core Rules:</strong> (1) Feedback must NOT be issued until IV verified. (2) Assignment briefs IV-approved before issue. (3) Authenticity declaration signed for every submission. (4) Resubmission permitted once. (5) No submissions after 31 May 2027. <strong>Unit 4 Engineering Project: topic must be negotiated and approved by the assessor before the learner begins any work.</strong></div>
+</div>
+
+<div class="alert alert-gold">
+  <div class="alert-icon">📐</div>
+  <div><strong>Grading:</strong> 60 GLH units — P=6pts, M=10pts, D=16pts. Unit 4 (120 GLH) — P=12pts, M=20pts, D=32pts. Extended Diploma thresholds: Pass ≥108 | Merit ≥156 | Distinction ≥216. Maximum possible = 128pts (all Distinctions). Criteria hierarchical — D requires M+P; M requires P.</div>
+</div>
+
+<div class="alert alert-teal">
+  <div class="alert-icon">🏎</div>
+  <div><strong>Unit 4 Engineering Project — starts Day 1:</strong> The 120 GLH project runs across the full year. Topic negotiation begins Week 1 (7 Sep). Project plan approved by Week 4. Report due <strong>16 May 2027</strong>. Verbal presentations <strong>17–21 May 2027</strong>. IV complete by 30 May. All before half term. Align with ESR CityCar Cup for authentic evidence where possible.</div>
+</div>
+
+<div class="section-title"><div class="section-num">1</div>Non-Lesson Dates 2026–27</div>
+<table>
+<tr><th>Date</th><th>Event</th></tr>
+<tr><td>1 Sep 2026</td><td>Bank Holiday</td></tr>
+<tr><td>2–4 Sep 2026</td><td>Induction Week</td></tr>
+<tr><td>7 Oct 2026</td><td>OSC L&D Day</td></tr>
+<tr><td>26–30 Oct 2026</td><td>Half Term</td></tr>
+<tr><td>3–5 Nov 2026</td><td>GCSE Resit papers</td></tr>
+<tr><td>9–13 Nov 2026</td><td>Parents' Appointments</td></tr>
+<tr><td>17 Dec 2026</td><td>Term 1 ends</td></tr>
+<tr><td>18 Dec 2026</td><td>OSC Conference Day</td></tr>
+<tr><td>21 Dec–3 Jan</td><td>Christmas / New Year Break</td></tr>
+<tr><td>4 Jan 2027</td><td>Spring term starts</td></tr>
+<tr><td>7 Jan 2027</td><td>OSC L&D Day</td></tr>
+<tr><td>15–19 Feb 2027</td><td>Half Term</td></tr>
+<tr><td>1–5 Mar 2027</td><td>Progression / Careers Week</td></tr>
+<tr><td>24 Mar 2027</td><td>Term 2 ends</td></tr>
+<tr><td>25–26 Mar 2027</td><td>Conference Day / Good Friday</td></tr>
+<tr><td>29 Mar–11 Apr 2027</td><td>Easter Break</td></tr>
+<tr><td>12 Apr 2027</td><td>Summer term starts</td></tr>
+<tr><td>3 May 2027</td><td>Bank Holiday</td></tr>
+<tr><td>31 May–4 Jun 2027</td><td>Bank Holiday + Half Term</td></tr>
+<tr><td>18 Jun 2027</td><td>Last day of term</td></tr>
+
+</table>
+
+<div class="section-title"><div class="section-num">2</div>Assessment Submission Windows</div>
+<p style="font-size:13px;color:#8a9bb0;margin-bottom:14px;">Five windows — one per natural break. Nothing due after 31 May 2027. June is for IV sampling, feedback and Pearson grade claim only.</p>
+<div class="window-strip">
+<div class="window-card">
+  <div class="window-label">Window 1 — Before Oct Half Term</div>
+  <div class="window-deadline">Deadline: 19 Oct 2026</div>
+  <div class="window-units">Unit 45: Fault Diagnosis</div>
+</div><div class="window-card">
+  <div class="window-label">Window 2 — Before Christmas</div>
+  <div class="window-deadline">Deadline: 7 Dec 2026</div>
+  <div class="window-units">Unit 46: Vehicle Science & Maths (Pathway Mandatory)</div>
+</div><div class="window-card">
+  <div class="window-label">Window 3 — Before Feb Half Term</div>
+  <div class="window-deadline">Deadline: 7 Feb 2027</div>
+  <div class="window-units">Unit 49: Petrol Injection Systems</div>
+</div><div class="window-card">
+  <div class="window-label">Window 4 — Before Easter</div>
+  <div class="window-deadline">Deadline: 22 Mar 2027</div>
+  <div class="window-units">Units 51: Ignition Systems, 105: Workshop Practices</div>
+</div><div class="window-card">
+  <div class="window-label">Window 5 — Before May Half Term</div>
+  <div class="window-deadline">Deadline: 9–16 May 2027</div>
+  <div class="window-units">Units 52: EMS, 106: Vehicle Prep/Inspection</div>
+</div><div class="window-card">
+  <div class="window-label">Window ★ — Full Year</div>
+  <div class="window-deadline">Deadline: Report 16 May | Presentations 17–21 May</div>
+  <div class="window-units">Unit 4: Engineering Project (120 GLH)</div>
+</div>
+</div>
+
+<div class="section-title"><div class="section-num">3</div>Unit Assessment Schedule</div>
+<div style="overflow-x:auto;">
+<table>
+<tr><th>Unit</th><th>Title / Type / Points</th><th>Window</th><th>Brief Issued</th><th>Submission</th><th>IV By</th><th>Assignment Summary</th></tr>
+<tr>
+<td><strong>Unit 4</strong></td>
+<td><span class="tag tag-opt">OPTIONAL (120 GLH)</span><br>Engineering Project<br><small style="color:#8a9bb0;">120 GLH | P=12pts M=20pts D=32pts</small></td>
+<td><span class="tag tag-pass">Window Full year — Report W5</span></td>
+<td style="font-size:11px;">Wk 1 — 7 Sep (topic negotiation)</td>
+<td><strong style="font-size:12px;">Report: 16 May 2027 | Presentations: 17–21 May 2027</strong></td>
+<td style="font-size:11px;">Wk 33 — 30 May</td>
+<td style="font-size:11px;">Learner-negotiated motorsport engineering investigation. Topic approved before start. Plan (Gantt, risk assessment), practical/investigative work, full written report, verbal presentation.</td>
+</tr><tr>
+<td><strong>Unit 45</strong></td>
+<td><span class="tag tag-opt">OPTIONAL</span><br>Vehicle System Fault Diagnosis and Rectification<br><small style="color:#8a9bb0;">60 GLH | P=6pts M=10pts D=16pts</small></td>
+<td><span class="tag tag-pass">Window Window 1</span></td>
+<td style="font-size:11px;">Wk 3 — 21 Sep</td>
+<td><strong style="font-size:12px;">Wk 7 — 19 Oct (before half term)</strong></td>
+<td style="font-size:11px;">Wk 9 — 6 Nov</td>
+<td style="font-size:11px;">'Advanced Vehicle Fault Diagnosis' — seeded fault vehicle routine using professional scan tools. Systematic diagnosis, live data interpretation, root cause, rectification and retest. Full diagnostic report.</td>
+</tr><tr>
+<td><strong>Unit 46</strong></td>
+<td><span class="tag tag-mand">PATHWAY MANDATORY</span><br>Applications of Vehicle Science and Mathematics<br><small style="color:#8a9bb0;">60 GLH | P=6pts M=10pts D=16pts</small></td>
+<td><span class="tag tag-pass">Window Window 2</span></td>
+<td style="font-size:11px;">Wk 9 — 3 Nov</td>
+<td><strong style="font-size:12px;">Wk 13 — 7 Dec</strong></td>
+<td style="font-size:11px;">Wk 14 — 14 Dec</td>
+<td style="font-size:11px;">'Vehicle Science in Motorsport' — gear ratio/speed, cornering forces, weight transfer, braking distances, aero forces, engine cooling thermodynamics. All motorsport contextualised. Analytical report.</td>
+</tr><tr>
+<td><strong>Unit 49</strong></td>
+<td><span class="tag tag-opt">OPTIONAL</span><br>Function and Operation of Vehicle Petrol Injection Systems<br><small style="color:#8a9bb0;">60 GLH | P=6pts M=10pts D=16pts</small></td>
+<td><span class="tag tag-pass">Window Window 3</span></td>
+<td style="font-size:11px;">Wk 15 — 4 Jan</td>
+<td><strong style="font-size:12px;">Wk 20 — 7 Feb (before half term)</strong></td>
+<td style="font-size:11px;">Wk 21 — 26 Feb</td>
+<td style="font-size:11px;">'Petrol Injection Systems Analysis' — injection system theory + practical diagnostic using scan tool. Fuel trim, lambda, MAF live data analysis. Diagnostic report. COSHH for fuel system.</td>
+</tr><tr>
+<td><strong>Unit 51</strong></td>
+<td><span class="tag tag-opt">OPTIONAL</span><br>Operation and Testing of Vehicle Electronic Ignition Systems<br><small style="color:#8a9bb0;">60 GLH | P=6pts M=10pts D=16pts</small></td>
+<td><span class="tag tag-pass">Window Window 4</span></td>
+<td style="font-size:11px;">Wk 22 — 1 Mar</td>
+<td><strong style="font-size:12px;">Wk 25 — 22 Mar (before Easter)</strong></td>
+<td style="font-size:11px;">Wk 27 — 19 Apr</td>
+<td style="font-size:11px;">'Electronic Ignition Systems Testing' — coil resistance, oscilloscope waveform capture and analysis, spark plug inspection, timing verification. Full diagnostic report. Oscilloscope required.</td>
+</tr><tr>
+<td><strong>Unit 52</strong></td>
+<td><span class="tag tag-opt">OPTIONAL</span><br>Vehicle Engine Management Systems<br><small style="color:#8a9bb0;">60 GLH | P=6pts M=10pts D=16pts</small></td>
+<td><span class="tag tag-pass">Window Window 5</span></td>
+<td style="font-size:11px;">Wk 28 — 26 Apr</td>
+<td><strong style="font-size:12px;">Wk 31 — 16 May</strong></td>
+<td style="font-size:11px;">Wk 33 — 30 May</td>
+<td style="font-size:11px;">'Engine Management Systems — Advanced Diagnostics' — EMS architecture + advanced diagnostic: multi-PID live data, sensor/actuator testing, seeded fault diagnosis and rectification. Professional report.</td>
+</tr><tr>
+<td><strong>Unit 105</strong></td>
+<td><span class="tag tag-path">PATHWAY OPTIONAL</span><br>Motorsport Workshop Practices<br><small style="color:#8a9bb0;">60 GLH | P=6pts M=10pts D=16pts</small></td>
+<td><span class="tag tag-pass">Window Window 4</span></td>
+<td style="font-size:11px;">Wk 22 — 1 Mar</td>
+<td><strong style="font-size:12px;">Wk 25 — 22 Mar (before Easter)</strong></td>
+<td style="font-size:11px;">Wk 27 — 19 Apr</td>
+<td style="font-size:11px;">'Motorsport Workshop Practices' — scheduled maintenance on ESR CityCar Cup C1 following motorsport job card. Risk assessment, PPE, documented procedure, job card completion, written evaluation.</td>
+</tr><tr>
+<td><strong>Unit 106</strong></td>
+<td><span class="tag tag-path">PATHWAY OPTIONAL</span><br>Motorsport Vehicle Preparation and Inspection<br><small style="color:#8a9bb0;">60 GLH | P=6pts M=10pts D=16pts</small></td>
+<td><span class="tag tag-pass">Window Window 5</span></td>
+<td style="font-size:11px;">Wk 27 — 12 Apr</td>
+<td><strong style="font-size:12px;">Wk 30 — 9 May</strong></td>
+<td style="font-size:11px;">Wk 33 — 30 May</td>
+<td style="font-size:11px;">'ESR Race Vehicle Preparation and Inspection' — full pre-event preparation to CityCar Cup technical regulations, scrutineering checklist, post-event inspection. Align with actual ESR event where possible.</td>
+</tr>
+</table>
+</div>
+
+<div class="section-title"><div class="section-num">4</div>Assessment Criteria — Pass / Merit / Distinction</div>
+<div style="overflow-x:auto;">
+<table>
+<tr><th>Unit</th><th class="crit-p">Pass Criteria</th><th class="crit-m">Merit Criteria</th><th class="crit-d">Distinction Criteria</th></tr>
+<tr>
+<td><strong>Unit 4</strong><br><small>Engineering Project</small><br><small style="color:#8a9bb0;">120 GLH</small></td>
+<td class="crit-p" style="font-size:12px;">Produce project plan; carry out activities; record outcomes; present in written report.</td>
+<td class="crit-m" style="font-size:12px;">Detailed plan with justified methodology; analyse data against objectives; evaluate process and outcomes.</td>
+<td class="crit-d" style="font-size:12px;">Critically evaluate methodology and justify alternatives; produce comprehensive report and presentation to professional standard.</td>
+</tr><tr>
+<td><strong>Unit 45</strong><br><small>Vehicle System Fault Diagnosis and Rectification</small><br><small style="color:#8a9bb0;">60 GLH</small></td>
+<td class="crit-p" style="font-size:12px;">Describe diagnostic principles; identify diagnostic system components; carry out diagnostic routine recording findings.</td>
+<td class="crit-m" style="font-size:12px;">Explain live data analysis use in diagnosis; carry out targeted tests explaining diagnostic logic.</td>
+<td class="crit-d" style="font-size:12px;">Evaluate diagnostic process effectiveness with justification; produce comprehensive diagnostic report to professional standard.</td>
+</tr><tr>
+<td><strong>Unit 46</strong><br><small>Applications of Vehicle Science and Mathematics</small><br><small style="color:#8a9bb0;">60 GLH</small></td>
+<td class="crit-p" style="font-size:12px;">Solve vehicle science problems using maths; apply dynamics to performance parameters; apply thermodynamics/fluid mechanics.</td>
+<td class="crit-m" style="font-size:12px;">Explain mathematical relationships governing motorsport performance; analyse performance data.</td>
+<td class="crit-d" style="font-size:12px;">Evaluate vehicle performance using combined methods; produce technical analysis of motorsport data.</td>
+</tr><tr>
+<td><strong>Unit 49</strong><br><small>Function and Operation of Vehicle Petrol Injection Systems</small><br><small style="color:#8a9bb0;">60 GLH</small></td>
+<td class="crit-p" style="font-size:12px;">Describe petrol injection construction and principles; identify fuel metering and ignition control; carry out inspection.</td>
+<td class="crit-m" style="font-size:12px;">Explain ECU use of sensor inputs; carry out diagnostic tests and interpret results.</td>
+<td class="crit-d" style="font-size:12px;">Evaluate injection calibration impact on performance and emissions; comprehensive diagnostic report.</td>
+</tr><tr>
+<td><strong>Unit 51</strong><br><small>Operation and Testing of Vehicle Electronic Ignition Systems</small><br><small style="color:#8a9bb0;">60 GLH</small></td>
+<td class="crit-p" style="font-size:12px;">Describe electronic ignition construction and principles; explain timing control; carry out tests recording results.</td>
+<td class="crit-m" style="font-size:12px;">Analyse test results and explain diagnostic significance; carry out oscilloscope analysis and interpret waveforms.</td>
+<td class="crit-d" style="font-size:12px;">Evaluate ignition performance using test data and oscilloscope; comprehensive diagnostic report.</td>
+</tr><tr>
+<td><strong>Unit 52</strong><br><small>Vehicle Engine Management Systems</small><br><small style="color:#8a9bb0;">60 GLH</small></td>
+<td class="crit-p" style="font-size:12px;">Describe EMS construction and operation; explain control strategies; carry out EMS tests recording results.</td>
+<td class="crit-m" style="font-size:12px;">Analyse EMS live data to diagnose fault; carry out structured diagnostic routine.</td>
+<td class="crit-d" style="font-size:12px;">Evaluate EMS strategy impact on performance and emissions; comprehensive EMS diagnostic report.</td>
+</tr><tr>
+<td><strong>Unit 105</strong><br><small>Motorsport Workshop Practices</small><br><small style="color:#8a9bb0;">60 GLH</small></td>
+<td class="crit-p" style="font-size:12px;">Identify H&S/housekeeping requirements; identify tools/equipment/documentation; carry out maintenance activity.</td>
+<td class="crit-m" style="font-size:12px;">Explain why practices are critical in motorsport context; demonstrate professional-standard practice and documentation.</td>
+<td class="crit-d" style="font-size:12px;">Evaluate practices against professional team standards; produce professional-standard workshop documentation.</td>
+</tr><tr>
+<td><strong>Unit 106</strong><br><small>Motorsport Vehicle Preparation and Inspection</small><br><small style="color:#8a9bb0;">60 GLH</small></td>
+<td class="crit-p" style="font-size:12px;">Identify pre-event preparation requirements; identify inspection requirements; carry out preparation with documentation.</td>
+<td class="crit-m" style="font-size:12px;">Explain why each requirement is critical for safety and performance; complete full preparation and post-event inspection.</td>
+<td class="crit-d" style="font-size:12px;">Evaluate process against professional standards; produce comprehensive preparation and inspection report.</td>
+</tr>
+</table>
+</div>
+
+<div class="section-title"><div class="section-num">5</div>Unit 4 Engineering Project — Timeline</div>
+<table>
+<tr><th>Phase</th><th>Dates</th><th>Activity</th></tr>
+<tr><td><strong>Negotiation</strong></td><td>Wk 1–2 (7–18 Sep)</td><td>Topic identification and assessor approval. Brief issued.</td></tr>
+<tr><td><strong>Planning</strong></td><td>Wk 2–4 (14 Sep–2 Oct)</td><td>Project plan: Gantt chart, methodology, risk assessment, resources identified. Plan submitted to assessor.</td></tr>
+<tr><td><strong>Execution</strong></td><td>Wk 5–16 (5 Oct–15 Jan)</td><td>Data collection, practical/investigative work, progress log maintained. Interim review at Oct half term and Christmas.</td></tr>
+<tr><td><strong>Analysis & Write-up</strong></td><td>Wk 17–24 (18 Jan–19 Mar)</td><td>Analysis, conclusions, write-up. Formative feedback on draft structure only (not content).</td></tr>
+<tr><td><strong>Finalise</strong></td><td>Wk 25–29 (22 Mar–16 May)</td><td>Final report polishing and submission (including over Easter).</td></tr>
+<tr><td><strong>Submission</strong></td><td><strong>Wk 30 — 16 May 2027</strong></td><td>REPORT DUE</td></tr>
+<tr><td><strong>Presentations</strong></td><td><strong>Wk 31 — 17–21 May 2027</strong></td><td>Verbal presentations to group and assessor.</td></tr>
+<tr><td><strong>IV & Feedback</strong></td><td>Wk 32–33 — by 30 May</td><td>IV sampling complete. Feedback issued. All done before half term.</td></tr>
+</table>
+
+<div class="section-title"><div class="section-num">6</div>IV / Standardisation Schedule</div>
+<table>
+<tr><th>Date</th><th>Purpose</th><th>Focus</th></tr>
+<tr><td>October 2026 (half term)</td><td>Brief quality — Window 1</td><td>Window 1 brief IV-approved? Unit 4 plans reviewed — topics appropriate and approved?</td></tr>
+<tr><td>December 2026</td><td>Windows 1 and 2 grades</td><td>Grade consistency for Units 45 and 46. Borderline cases discussed. Unit 4 progress on track?</td></tr>
+<tr><td>February 2027 (half term)</td><td>Window 3 grades</td><td>Unit 49 graded. Unit 4 execution phase — any learners at risk?</td></tr>
+<tr><td>April/May 2027</td><td>Final grade confirmation</td><td>Windows 4 and 5 complete. Unit 4 report and presentation IV-complete. All grades confirmed. Pearson claim ready.</td></tr>
+</table>
+
+<div class="section-title"><div class="section-num">7</div>Pearson SV Readiness Checklist</div>
+<table>
+<tr><th>Requirement</th><th>Status</th></tr>
+<tr><td>Unit 4 project topic approved and documented before learner began work</td><td>□</td></tr>
+<tr><td>Assignment briefs IV-approved before issue — every unit</td><td>□</td></tr>
+<tr><td>Learner authenticity declarations signed for every submission</td><td>□</td></tr>
+<tr><td>Marked work with assessor grade decisions and criteria evidence</td><td>□</td></tr>
+<tr><td>IV sampling records for every unit — learners, outcome, date, LIV signature</td><td>□</td></tr>
+<tr><td>Feedback issued AFTER IV sign-off only</td><td>□</td></tr>
+<tr><td>Unit 4 verbal presentation evidence on file (assessor notes or recording)</td><td>□</td></tr>
+<tr><td>Resubmission records documented where applicable</td><td>□</td></tr>
+<tr><td>Standardisation meeting minutes for all four meetings</td><td>□</td></tr>
+<tr><td>Grade tracker complete for all learners across all 8 units</td><td>□</td></tr>
+<tr><td>Grades submitted to Pearson via BTEC Centre Services</td><td>□</td></tr>
+<tr><td>Learner registration confirmed on Pearson BTEC Centre Services</td><td>□</td></tr>
+<tr><td>ESR race event evidence attached to Unit 105/106 portfolios where applicable</td><td>□</td></tr>
+<tr><td>No submissions after 31 May 2027 — confirmed</td><td>□</td></tr>
+<tr><td>Assessor occupational competence and assessment qualification on file</td><td>□</td></tr>
+</table>
+
+</div>
+<footer>BTEC L3 Motorsport Year 2 — F2MVRA — Extended Diploma 601/9060/7 &nbsp;|&nbsp; East Surrey College Motor Vehicle & Motorsport &nbsp;|&nbsp; 2026–27 &nbsp;|&nbsp; Internal staff use only</footer>
+</body>
+</html>

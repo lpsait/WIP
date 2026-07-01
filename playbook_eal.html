@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EAL L2 Motorsport — Delivery Playbook 2026–27</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0d1b2a;--navy-mid:#1a2d42;--navy-light:#243b55;
+  --gold:#f39c12;--gold-light:#f9ca5a;--white:#f5f5f0;--grey:#8a9bb0;
+  --teal:#006272;--teal-light:#5dade2;--teal-pale:#0d3540;
+  --green:#1a5276;--green-light:#58d68d;--green-pale:#0d2510;
+  --red:#c0392b;--red-pale:#2a0a08;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Barlow',sans-serif;background:var(--navy);color:var(--white);min-height:100vh;}
+header{background:var(--navy-mid);border-bottom:4px solid var(--teal-light);padding:18px 36px;}
+.header-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.header-left{display:flex;align-items:center;gap:14px;}
+.esc-badge{background:var(--teal-light);color:var(--navy);font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:12px;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:3px;}
+.header-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:20px;}
+.header-sub{font-size:11px;color:var(--grey);text-transform:uppercase;letter-spacing:1px;}
+.back-link{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--teal-light);text-decoration:none;padding:6px 14px;border:1px solid var(--teal-light);border-radius:3px;transition:background 0.2s;}
+.back-link:hover{background:rgba(243,156,18,0.1);}
+.hero{max-width:1200px;margin:0 auto;padding:44px 36px 28px;}
+.hero-eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--teal-light);margin-bottom:10px;}
+.hero h1{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(34px,5vw,58px);line-height:1.0;margin-bottom:10px;}
+.hero h1 span{color:var(--teal-light);}
+.hero-sub{color:#a8bcce;font-size:14px;font-weight:300;max-width:700px;line-height:1.7;margin-bottom:24px;}
+.stats-row{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:32px;}
+.stat-pill{background:var(--navy-mid);border:1px solid var(--navy-light);border-radius:4px;padding:8px 16px;font-family:'Barlow Condensed',sans-serif;}
+.stat-val{font-size:22px;font-weight:900;color:var(--teal-light);display:block;line-height:1;}
+.stat-lbl{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--grey);display:block;}
+.content{max-width:1200px;margin:0 auto;padding:0 36px 60px;}
+/* Alert boxes */
+.alert{border-radius:6px;padding:14px 18px;margin-bottom:20px;font-size:13px;line-height:1.6;display:flex;gap:12px;align-items:flex-start;}
+.alert-icon{font-size:18px;flex-shrink:0;margin-top:1px;}
+.alert-red{background:var(--red-pale);border-left:4px solid var(--red);}
+.alert-teal{background:var(--teal-pale);border-left:4px solid var(--teal);}
+.alert-gold{background:rgba(243,156,18,0.08);border-left:4px solid var(--gold);}
+/* Section headings */
+.section-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:22px;color:var(--teal-light);text-transform:uppercase;letter-spacing:1px;margin:36px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--navy-light);display:flex;align-items:center;gap:10px;}
+.section-num{background:var(--teal-light);color:var(--navy);width:26px;height:26px;border-radius:50%;font-size:13px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+/* Tables */
+table{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:24px;}
+th{background:#004d59;color:var(--white);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:1px;text-transform:uppercase;padding:10px 12px;text-align:left;}
+td{padding:9px 12px;border-bottom:1px solid var(--navy-light);vertical-align:top;line-height:1.5;}
+tr:nth-child(even) td{background:rgba(255,255,255,0.02);}
+tr:hover td{background:rgba(255,255,255,0.04);}
+.tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:2px 8px;border-radius:3px;margin-bottom:3px;}
+.tag-mand{background:rgba(243,156,18,0.2);color:var(--gold);}
+.tag-path{background:rgba(93,173,226,0.2);color:#5dade2;}
+.tag-opt{background:rgba(138,155,176,0.15);color:#8a9bb0;}
+.tag-pass{background:rgba(88,214,141,0.15);color:#58d68d;}
+.tag-merit{background:rgba(93,173,226,0.15);color:#5dade2;}
+.tag-dist{background:rgba(243,156,18,0.15);color:var(--gold);}
+/* Unit cards */
+.unit-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px;margin-bottom:24px;}
+.unit-card{background:var(--navy-mid);border:1px solid var(--navy-light);border-radius:6px;overflow:hidden;transition:border-color 0.2s;}
+.unit-card:hover{border-color:var(--teal-light);}
+.unit-card-top{height:4px;background:var(--teal-light);}
+.unit-card-body{padding:16px;}
+.unit-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:28px;color:var(--teal-light);line-height:1;}
+.unit-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;color:var(--white);margin:3px 0 6px;}
+.unit-glh{font-size:11px;color:var(--grey);margin-bottom:8px;}
+.unit-lo{font-size:12px;color:#8a9bb0;line-height:1.5;}
+.unit-dates{margin-top:10px;border-top:1px solid var(--navy-light);padding-top:10px;display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.unit-date-item{font-size:11px;}
+.unit-date-lbl{color:var(--grey);text-transform:uppercase;letter-spacing:0.5px;font-size:10px;}
+.unit-date-val{color:var(--white);font-weight:600;}
+/* Window badges */
+.window-strip{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px;}
+.window-card{background:var(--navy-mid);border:1px solid var(--navy-light);border-radius:6px;padding:14px 18px;flex:1;min-width:180px;}
+.window-label{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:13px;color:var(--teal-light);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;}
+.window-deadline{font-size:13px;font-weight:600;color:var(--white);margin-bottom:3px;}
+.window-units{font-size:11px;color:var(--grey);}
+/* Crit table special */
+.crit-p{color:#58d68d;}
+.crit-m{color:#5dade2;}
+.crit-d{color:var(--gold);}
+/* Week table */
+.wk-break td{background:rgba(255,255,255,0.04)!important;color:var(--grey);font-style:italic;}
+.wk-deadline td{background:rgba(192,57,43,0.08)!important;}
+.wk-deadline td:first-child{border-left:3px solid var(--red);}
+.wk-iv td{background:rgba(0,98,114,0.08)!important;}
+/* Footer */
+footer{border-top:1px solid var(--navy-light);margin-top:60px;padding:24px 36px;text-align:center;font-size:11px;color:var(--grey);}
+@media(max-width:700px){.hero{padding:28px 18px 18px;}.content{padding:0 18px 40px;}.stats-row{gap:7px;}.window-strip{flex-direction:column;}}
+</style>
+
+<style>
+:root{--accent:#5dade2;--accent-dark:#004d59;}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="header-left">
+      <div class="esc-badge">EAL</div>
+      <div>
+        <div class="header-title">Level 2 Motorsport Engineering — EOK2 Units</div>
+        <div class="header-sub">Delivery Playbook 2026–27 &nbsp;|&nbsp; East Surrey College</div>
+      </div>
+    </div>
+    <a class="back-link" href="index.html">← All Playbooks</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-eyebrow">EAL — Excellence Achievement & Learning</div>
+  <h1>EAL Level 2<br><span>Motorsport</span><br>Engineering</h1>
+  <p class="hero-sub">Full delivery playbook for the EAL Level 2 Engineering qualification — motorsport pathway. 9 units, 540 GLH. All units: EWS1 (knowledge) + EWS2 (practical learner report). Unit 049 also requires EWS3. Pass or Referred only — no grade.</p>
+  <div class="stats-row">
+    <div class="stat-pill"><span class="stat-val">9</span><span class="stat-lbl">Units</span></div>
+    <div class="stat-pill"><span class="stat-val">540</span><span class="stat-lbl">GLH</span></div>
+    <div class="stat-pill"><span class="stat-val">5 Mar 2027</span><span class="stat-lbl">Assessment Deadline</span></div>
+    <div class="stat-pill"><span class="stat-val">Pass / Referred</span><span class="stat-lbl">Grading</span></div>
+    <div class="stat-pill"><span class="stat-val">EWS1 + EWS2</span><span class="stat-lbl">Evidence Model</span></div>
+  </div>
+</div>
+
+<div class="content">
+
+<div class="alert alert-red">
+  <div class="alert-icon">⚠</div>
+  <div><strong>Mandatory EAL Requirement:</strong> ALL teaching and assessment staff must hold documented evidence of occupational competence in the specific motorsport engineering areas they deliver and assess. This is not optional — it is an awarding body condition of registration. Evidence must be on file before delivery begins and available for EQA review.</div>
+</div>
+
+<div class="alert alert-teal">
+  <div class="alert-icon">📋</div>
+  <div><strong>Assessment Model:</strong> Every unit requires EWS1 (short answer questions or online exam) + EWS2 (practical learner report). Unit 049 additionally requires EWS3. Both assessor and learner must sign and date every EWS declaration. Evidence must be cross-referenced to the specific learning outcome and assessment criteria. Evidence log updated throughout. Unit 001 EWS1 is an <strong>EAL online examination</strong> — book via EAL portal before September.</div>
+</div>
+
+<div class="section-title"><div class="section-num">1</div>Non-Lesson Dates 2026–27</div>
+<table>
+<tr><th>Date</th><th>Event</th></tr>
+<tr><td>1 Sep 2026</td><td>Bank Holiday</td></tr>
+<tr><td>2–4 Sep 2026</td><td>Induction Week</td></tr>
+<tr><td>7 Oct 2026</td><td>OSC L&D Day</td></tr>
+<tr><td>26–30 Oct 2026</td><td>Half Term</td></tr>
+<tr><td>3–5 Nov 2026</td><td>GCSE Resit papers</td></tr>
+<tr><td>9–13 Nov 2026</td><td>Parents' Appointments</td></tr>
+<tr><td>17 Dec 2026</td><td>Term 1 ends</td></tr>
+<tr><td>18 Dec 2026</td><td>OSC Conference Day</td></tr>
+<tr><td>21 Dec–3 Jan</td><td>Christmas / New Year Break</td></tr>
+<tr><td>4 Jan 2027</td><td>Spring term starts</td></tr>
+<tr><td>7 Jan 2027</td><td>OSC L&D Day</td></tr>
+<tr><td>15–19 Feb 2027</td><td>Half Term</td></tr>
+<tr><td>1–5 Mar 2027</td><td>Progression / Careers Week</td></tr>
+<tr><td>24 Mar 2027</td><td>Term 2 ends</td></tr>
+<tr><td>25–26 Mar 2027</td><td>Conference Day / Good Friday</td></tr>
+<tr><td>29 Mar–11 Apr 2027</td><td>Easter Break</td></tr>
+<tr><td>12 Apr 2027</td><td>Summer term starts</td></tr>
+<tr><td>3 May 2027</td><td>Bank Holiday</td></tr>
+<tr><td>31 May–4 Jun 2027</td><td>Bank Holiday + Half Term</td></tr>
+<tr><td>18 Jun 2027</td><td>Last day of term</td></tr>
+
+</table>
+
+<div class="section-title"><div class="section-num">2</div>Unit Cards — Assessment at a Glance</div>
+<div class="unit-grid">
+
+<div class="unit-card">
+  <div class="unit-card-top"></div>
+  <div class="unit-card-body">
+    <div class="unit-num">EOK2-001</div>
+    <span class="tag tag-mand">MANDATORY</span>
+    <div class="unit-title">Engineering Environmental Awareness</div>
+    <div class="unit-glh">60 GLH &nbsp;|&nbsp; Evidence: EWS1 (online exam) + EWS2 (practical)</div>
+    <div class="unit-lo">LO1: H&S legislation (HASAWA, COSHH, PUWER, RIDDOR, manual handling)<br>LO2: Employer/employee roles, PDPs, discipline & grievance<br>LO3: Engineering org types, departmental functions, factors of industrial change</div>
+    <div class="unit-dates">
+      <div class="unit-date-item"><div class="unit-date-lbl">Assessment Target</div><div class="unit-date-val">18 Sep 2026</div></div>
+      <div class="unit-date-item"><div class="unit-date-lbl">IQA Submit By</div><div class="unit-date-val">25 Sep 2026</div></div>
+    </div>
+    <div style="margin-top:10px;font-size:11px;color:var(--gold);line-height:1.5;">⚠ Book EWS1 online exam via EAL portal BEFORE term starts. EWS2 practical (manual handling) assessed in session.</div>
+  </div>
+</div>
+<div class="unit-card">
+  <div class="unit-card-top"></div>
+  <div class="unit-card-body">
+    <div class="unit-num">EOK2-048</div>
+    <span class="tag tag-opt">OPTIONAL</span>
+    <div class="unit-title">Motorsport Engineering Techniques</div>
+    <div class="unit-glh">60 GLH &nbsp;|&nbsp; Evidence: EWS1 (SAQ) + EWS2 (practical report)</div>
+    <div class="unit-lo">LO1: Forms of communication in motorsport<br>LO2: IT/ICT in motorsport (data logging, telemetry, CAD)<br>LO3: Basic tools and techniques<br>LO4: Measurement and marking out</div>
+    <div class="unit-dates">
+      <div class="unit-date-item"><div class="unit-date-lbl">Assessment Target</div><div class="unit-date-val">2 Oct 2026</div></div>
+      <div class="unit-date-item"><div class="unit-date-lbl">IQA Submit By</div><div class="unit-date-val">9 Oct 2026</div></div>
+    </div>
+    <div style="margin-top:10px;font-size:11px;color:var(--gold);line-height:1.5;">⚠ EWS2 practical: use and identify tools; marking out demonstration. Learner report cross-referenced to LO/AC.</div>
+  </div>
+</div>
+<div class="unit-card">
+  <div class="unit-card-top"></div>
+  <div class="unit-card-body">
+    <div class="unit-num">EOK2-049</div>
+    <span class="tag tag-opt">OPTIONAL</span>
+    <div class="unit-title">Motorsport Engineering Principles</div>
+    <div class="unit-glh">60 GLH &nbsp;|&nbsp; Evidence: EWS1 (SAQ) + EWS2 (numeracy) + EWS3 (science)</div>
+    <div class="unit-lo">LO1: Material selection for motorsport<br>LO2: Material properties, heat treatment, bonding<br>LO3: Numeracy (gear ratios, area, volume, formula transposition)<br>LO4: Science (SI units, forces, moments, friction, electricity, Ohm's law)</div>
+    <div class="unit-dates">
+      <div class="unit-date-item"><div class="unit-date-lbl">Assessment Target</div><div class="unit-date-val">16 Oct 2026</div></div>
+      <div class="unit-date-item"><div class="unit-date-lbl">IQA Submit By</div><div class="unit-date-val">23 Oct 2026</div></div>
+    </div>
+    <div style="margin-top:10px;font-size:11px;color:var(--gold);line-height:1.5;">⚠ THREE worksheets required. EWS2 = numeracy practical. EWS3 = science practical. All three signed.</div>
+  </div>
+</div>
+<div class="unit-card">
+  <div class="unit-card-top"></div>
+  <div class="unit-card-body">
+    <div class="unit-num">EOK2-050</div>
+    <span class="tag tag-opt">OPTIONAL</span>
+    <div class="unit-title">Engine Ancillaries and Operating Systems</div>
+    <div class="unit-glh">60 GLH &nbsp;|&nbsp; Evidence: EWS1 (SAQ) + EWS2 (practical report)</div>
+    <div class="unit-lo">LO1: Engine principles and ancillary system layout<br>LO2: Function of ≥2 ancillary and ≥2 operating systems<br>LO3: Remove, inspect and refit ≥4 engine ancillary systems<br>LO4: Select and use correct tools throughout</div>
+    <div class="unit-dates">
+      <div class="unit-date-item"><div class="unit-date-lbl">Assessment Target</div><div class="unit-date-val">6 Nov 2026</div></div>
+      <div class="unit-date-item"><div class="unit-date-lbl">IQA Submit By</div><div class="unit-date-val">13 Nov 2026</div></div>
+    </div>
+    <div style="margin-top:10px;font-size:11px;color:var(--gold);line-height:1.5;">⚠ Practical: taught pre-half term, assessed post-half term. COSHH datasheets required for all fluids. Assessor occupational competence mandatory.</div>
+  </div>
+</div>
+<div class="unit-card">
+  <div class="unit-card-top"></div>
+  <div class="unit-card-body">
+    <div class="unit-num">EOK2-051</div>
+    <span class="tag tag-opt">OPTIONAL</span>
+    <div class="unit-title">Motorsport Electrical Systems</div>
+    <div class="unit-glh">60 GLH &nbsp;|&nbsp; Evidence: EWS1 (SAQ) + EWS2 (practical report)</div>
+    <div class="unit-lo">LO1: DC power, auxiliary supply, alternator, starter system function<br>LO2: Demonstrate correct operation of lighting and auxiliary electrical components<br>LO3: Inspect wiring loom; use test equipment to confirm battery, alternator, starter function</div>
+    <div class="unit-dates">
+      <div class="unit-date-item"><div class="unit-date-lbl">Assessment Target</div><div class="unit-date-val">20 Nov 2026</div></div>
+      <div class="unit-date-item"><div class="unit-date-lbl">IQA Submit By</div><div class="unit-date-val">27 Nov 2026</div></div>
+    </div>
+    <div style="margin-top:10px;font-size:11px;color:var(--gold);line-height:1.5;">⚠ Battery safety briefing MANDATORY before practical. Multimeter required. EWS2: wiring loom inspection, all electrical test results recorded and cross-referenced to criteria.</div>
+  </div>
+</div>
+<div class="unit-card">
+  <div class="unit-card-top"></div>
+  <div class="unit-card-body">
+    <div class="unit-num">EOK2-052</div>
+    <span class="tag tag-opt">OPTIONAL</span>
+    <div class="unit-title">Chassis System Preparation</div>
+    <div class="unit-glh">60 GLH &nbsp;|&nbsp; Evidence: EWS1 (SAQ) + EWS2 (practical report)</div>
+    <div class="unit-lo">LO1: Motorsport vehicle design types (≥2)<br>LO2: Wheel and tyre characteristics and construction<br>LO3: Steering and suspension system function<br>LO4: Prepare chassis using data — corner weights, pressures, geometry<br>LO5: Select and use correct tools</div>
+    <div class="unit-dates">
+      <div class="unit-date-item"><div class="unit-date-lbl">Assessment Target</div><div class="unit-date-val">8 Jan 2027</div></div>
+      <div class="unit-date-item"><div class="unit-date-lbl">IQA Submit By</div><div class="unit-date-val">15 Jan 2027</div></div>
+    </div>
+    <div style="margin-top:10px;font-size:11px;color:var(--gold);line-height:1.5;">⚠ Requires motorsport vehicle with adjustable suspension. ESR CityCar Cup C1 is ideal. Corner weight scales, tyre pressure gauges and camber gauge required. L&D Day 7 Jan.</div>
+  </div>
+</div>
+<div class="unit-card">
+  <div class="unit-card-top"></div>
+  <div class="unit-card-body">
+    <div class="unit-num">EOK2-053</div>
+    <span class="tag tag-opt">OPTIONAL</span>
+    <div class="unit-title">Braking System Function and Inspection</div>
+    <div class="unit-glh">60 GLH &nbsp;|&nbsp; Evidence: EWS1 (SAQ) + EWS2 (practical report)</div>
+    <div class="unit-lo">LO1: Braking system operating principles, components, bleeding procedure, legal requirements<br>LO2: Inspect braking system; follow defect procedure; demonstrate brake bleed<br>LO3: Select data, tools and equipment; carry out braking inspection safely</div>
+    <div class="unit-dates">
+      <div class="unit-date-item"><div class="unit-date-lbl">Assessment Target</div><div class="unit-date-val">29 Jan 2027</div></div>
+      <div class="unit-date-item"><div class="unit-date-lbl">IQA Submit By</div><div class="unit-date-val">5 Feb 2027</div></div>
+    </div>
+    <div style="margin-top:10px;font-size:11px;color:var(--gold);line-height:1.5;">⚠ Risk assessment MUST be signed before practical. Brake fluid (DOT 4/5.1) COSHH datasheet displayed. Seeded defect vehicle recommended for authentic evidence.</div>
+  </div>
+</div>
+<div class="unit-card">
+  <div class="unit-card-top"></div>
+  <div class="unit-card-body">
+    <div class="unit-num">EOK2-054</div>
+    <span class="tag tag-opt">OPTIONAL</span>
+    <div class="unit-title">Inspecting During an Event</div>
+    <div class="unit-glh">60 GLH &nbsp;|&nbsp; Evidence: EWS1 (SAQ) + EWS2 (practical report)</div>
+    <div class="unit-lo">LO1: H&S and housekeeping for vehicle inspection at an event<br>LO2: Working constraints during event inspection (instructions, deadlines, communication)<br>LO3: Pre-competition inspection, final inspection, post-inspection documentation</div>
+    <div class="unit-dates">
+      <div class="unit-date-item"><div class="unit-date-lbl">Assessment Target</div><div class="unit-date-val">12 Feb 2027</div></div>
+      <div class="unit-date-item"><div class="unit-date-lbl">IQA Submit By</div><div class="unit-date-val">19 Feb 2027</div></div>
+    </div>
+    <div style="margin-top:10px;font-size:11px;color:var(--gold);line-height:1.5;">⚠ IDEAL: assess at ESR CityCar Cup race event for authentic evidence. If not possible, simulate event environment in workshop with time pressure and inspection checklist.</div>
+  </div>
+</div>
+<div class="unit-card">
+  <div class="unit-card-top"></div>
+  <div class="unit-card-body">
+    <div class="unit-num">EOK2-055</div>
+    <span class="tag tag-opt">OPTIONAL</span>
+    <div class="unit-title">Transmission Principles and Operation</div>
+    <div class="unit-glh">60 GLH &nbsp;|&nbsp; Evidence: EWS1 (SAQ) + EWS2 (practical report)</div>
+    <div class="unit-lo">LO1: ≥1 transmission type, ≥1 clutch type, ≥1 final drive type — principles<br>LO2: Remove, inspect and refit gear ratio sets; confirm correct function<br>LO3: Remove, inspect and refit gear selection system; confirm correct function</div>
+    <div class="unit-dates">
+      <div class="unit-date-item"><div class="unit-date-lbl">Assessment Target</div><div class="unit-date-val">5 Mar 2027</div></div>
+      <div class="unit-date-item"><div class="unit-date-lbl">IQA Submit By</div><div class="unit-date-val">12 Mar 2027</div></div>
+    </div>
+    <div style="margin-top:10px;font-size:11px;color:var(--gold);line-height:1.5;">⚠ Transmission fluid COSHH required. Learner must demonstrate correct torque for all fasteners. Motorsport sequential or H-pattern gearbox preferred; close-ratio road gearbox acceptable.</div>
+  </div>
+</div>
+</div>
+
+<div class="section-title"><div class="section-num">3</div>Full Unit Assessment Schedule</div>
+<div style="overflow-x:auto;">
+<table>
+<tr><th>Code</th><th>Unit</th><th>GLH</th><th>Evidence</th><th>Assessment Target</th><th>IQA Submit By</th><th>Critical Notes</th></tr>
+<tr>
+<td><strong>EOK2-001</strong></td>
+<td><span class="tag tag-mand">MANDATORY</span><br>Engineering Environmental Awareness</td>
+<td>60 GLH</td>
+<td>EWS1 (online exam) + EWS2 (practical)</td>
+<td><strong>18 Sep 2026</strong></td>
+<td>25 Sep 2026</td>
+<td style="font-size:11px;color:#8a9bb0;">Book EWS1 online exam via EAL portal BEFORE term starts. EWS2 practical (manual handling) assessed in session.</td>
+</tr><tr>
+<td><strong>EOK2-048</strong></td>
+<td><span class="tag tag-opt">OPTIONAL</span><br>Motorsport Engineering Techniques</td>
+<td>60 GLH</td>
+<td>EWS1 (SAQ) + EWS2 (practical report)</td>
+<td><strong>2 Oct 2026</strong></td>
+<td>9 Oct 2026</td>
+<td style="font-size:11px;color:#8a9bb0;">EWS2 practical: use and identify tools; marking out demonstration. Learner report cross-referenced to LO/AC.</td>
+</tr><tr>
+<td><strong>EOK2-049</strong></td>
+<td><span class="tag tag-opt">OPTIONAL</span><br>Motorsport Engineering Principles</td>
+<td>60 GLH</td>
+<td>EWS1 (SAQ) + EWS2 (numeracy) + EWS3 (science)</td>
+<td><strong>16 Oct 2026</strong></td>
+<td>23 Oct 2026</td>
+<td style="font-size:11px;color:#8a9bb0;">THREE worksheets required. EWS2 = numeracy practical. EWS3 = science practical. All three signed.</td>
+</tr><tr>
+<td><strong>EOK2-050</strong></td>
+<td><span class="tag tag-opt">OPTIONAL</span><br>Engine Ancillaries and Operating Systems</td>
+<td>60 GLH</td>
+<td>EWS1 (SAQ) + EWS2 (practical report)</td>
+<td><strong>6 Nov 2026</strong></td>
+<td>13 Nov 2026</td>
+<td style="font-size:11px;color:#8a9bb0;">Practical: taught pre-half term, assessed post-half term. COSHH datasheets required for all fluids. Assessor occupational competence mandatory.</td>
+</tr><tr>
+<td><strong>EOK2-051</strong></td>
+<td><span class="tag tag-opt">OPTIONAL</span><br>Motorsport Electrical Systems</td>
+<td>60 GLH</td>
+<td>EWS1 (SAQ) + EWS2 (practical report)</td>
+<td><strong>20 Nov 2026</strong></td>
+<td>27 Nov 2026</td>
+<td style="font-size:11px;color:#8a9bb0;">Battery safety briefing MANDATORY before practical. Multimeter required. EWS2: wiring loom inspection, all electrical test results recorded and cross-referenced to criteria.</td>
+</tr><tr>
+<td><strong>EOK2-052</strong></td>
+<td><span class="tag tag-opt">OPTIONAL</span><br>Chassis System Preparation</td>
+<td>60 GLH</td>
+<td>EWS1 (SAQ) + EWS2 (practical report)</td>
+<td><strong>8 Jan 2027</strong></td>
+<td>15 Jan 2027</td>
+<td style="font-size:11px;color:#8a9bb0;">Requires motorsport vehicle with adjustable suspension. ESR CityCar Cup C1 is ideal. Corner weight scales, tyre pressure gauges and camber gauge required. L&D Day 7 Jan.</td>
+</tr><tr>
+<td><strong>EOK2-053</strong></td>
+<td><span class="tag tag-opt">OPTIONAL</span><br>Braking System Function and Inspection</td>
+<td>60 GLH</td>
+<td>EWS1 (SAQ) + EWS2 (practical report)</td>
+<td><strong>29 Jan 2027</strong></td>
+<td>5 Feb 2027</td>
+<td style="font-size:11px;color:#8a9bb0;">Risk assessment MUST be signed before practical. Brake fluid (DOT 4/5.1) COSHH datasheet displayed. Seeded defect vehicle recommended for authentic evidence.</td>
+</tr><tr>
+<td><strong>EOK2-054</strong></td>
+<td><span class="tag tag-opt">OPTIONAL</span><br>Inspecting During an Event</td>
+<td>60 GLH</td>
+<td>EWS1 (SAQ) + EWS2 (practical report)</td>
+<td><strong>12 Feb 2027</strong></td>
+<td>19 Feb 2027</td>
+<td style="font-size:11px;color:#8a9bb0;">IDEAL: assess at ESR CityCar Cup race event for authentic evidence. If not possible, simulate event environment in workshop with time pressure and inspection checklist.</td>
+</tr><tr>
+<td><strong>EOK2-055</strong></td>
+<td><span class="tag tag-opt">OPTIONAL</span><br>Transmission Principles and Operation</td>
+<td>60 GLH</td>
+<td>EWS1 (SAQ) + EWS2 (practical report)</td>
+<td><strong>5 Mar 2027</strong></td>
+<td>12 Mar 2027</td>
+<td style="font-size:11px;color:#8a9bb0;">Transmission fluid COSHH required. Learner must demonstrate correct torque for all fasteners. Motorsport sequential or H-pattern gearbox preferred; close-ratio road gearbox acceptable.</td>
+</tr>
+</table>
+</div>
+
+<div class="section-title"><div class="section-num">4</div>IQA Sampling Strategy</div>
+<table>
+<tr><th>Principle</th><th>Detail</th></tr>
+<tr><td>Minimum sample</td><td>25% of learners per unit throughout the year</td></tr>
+<tr><td>Final unit (EOK2-055)</td><td>100% sampling before results claim</td></tr>
+<tr><td>New assessors</td><td>100% sampling until IQA confidence established</td></tr>
+<tr><td>EOK2-001 EWS1 (online exam)</td><td>Result confirmation filed in portfolio for every learner — check for all</td></tr>
+<tr><td>IQA methods</td><td>Portfolio review | Evidence log check | Observation of assessment | Assessor discussion | Work scrutiny</td></tr>
+<tr><td>Standardisation</td><td>December 2026 (interim — units 001 to 051) | March 2027 (pre-claim — all units)</td></tr>
+<tr><td>EQA</td><td>EAL External Quality Assurer will visit/sample. All staff competence evidence, evidence logs, EWS forms, risk assessments and COSHH records must be available.</td></tr>
+</table>
+
+<div class="section-title"><div class="section-num">5</div>Key Requirements Checklist</div>
+<table>
+<tr><th>Requirement</th><th>Status</th></tr>
+<tr><td>EOK2-001 EWS1 online exam booked via EAL portal before September</td><td style="color:#58d68d;">□ Confirm</td></tr>
+<tr><td>All assessor occupational competence evidence on file</td><td style="color:#58d68d;">□ Confirm</td></tr>
+<tr><td>EAL centre approval confirmed for EOK2 motorsport units</td><td style="color:#58d68d;">□ Confirm</td></tr>
+<tr><td>Learner registration confirmed on EAL portal</td><td style="color:#58d68d;">□ Confirm</td></tr>
+<tr><td>ESR CityCar Cup event dates confirmed — for EOK2-054 authentic assessment</td><td style="color:#58d68d;">□ Confirm</td></tr>
+<tr><td>All EWS1/EWS2/EWS3 forms available before unit delivery begins</td><td style="color:#58d68d;">□ Confirm</td></tr>
+<tr><td>Risk assessments prepared for all practical units (050, 051, 052, 053, 055)</td><td style="color:#58d68d;">□ Confirm</td></tr>
+<tr><td>COSHH datasheets available for all practical units</td><td style="color:#58d68d;">□ Confirm</td></tr>
+<tr><td>Corner weight scales, camber gauge, tyre pressure gauges available (EOK2-052)</td><td style="color:#58d68d;">□ Confirm</td></tr>
+<tr><td>Oscilloscope or waveform capture available (EOK2-051)</td><td style="color:#58d68d;">□ Confirm</td></tr>
+<tr><td>Brake bleeding kit and brake fluid COSHH available (EOK2-053)</td><td style="color:#58d68d;">□ Confirm</td></tr>
+<tr><td>Motorsport gearbox or close-ratio gearbox available (EOK2-055)</td><td style="color:#58d68d;">□ Confirm</td></tr>
+</table>
+
+</div>
+<footer>EAL Level 2 Motorsport Engineering — Delivery Playbook 2026–27 &nbsp;|&nbsp; East Surrey College Motor Vehicle & Motorsport &nbsp;|&nbsp; Internal staff use only</footer>
+</body>
+</html>
